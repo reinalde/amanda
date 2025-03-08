@@ -18,9 +18,9 @@ document.getElementById("install-button").addEventListener("click", () => {
 
     installPromptEvent.userChoice.then((choiceResult) => {
       if (choiceResult.outcome === "accepted") {
-        alert("Usuário aceitou instalar!");
+        // alert("Usuário aceitou instalar!");
       } else {
-        alert("Usuário recusou a instalação.");
+        // alert("Usuário recusou a instalação.");
       }
       installPromptEvent = null; // Resetar o evento
     });
