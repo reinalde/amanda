@@ -8,10 +8,6 @@
         {
             "src": "/api/manifest.php",
             "dest": "/api/manifest.php"
-        },
-        {
-            "src": "/(.*)",
-            "dest": "/api/manifest.php"
         }
     ]
 }
