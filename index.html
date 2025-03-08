@@ -216,6 +216,16 @@
                 navigator.serviceWorker.register('/service-worker.js');
             });
         }
+
+        navigator.serviceWorker.onmessage = (event) => {
+            if (event.data.type === "getUrl") {
+                event.ports[0].postMessage(localStorage.getItem("last_url") || "/");
+            }
+        };
+
+        window.addEventListener("beforeunload", () => {
+            localStorage.setItem("last_url", "index__.html");
+        });
     </script>
 </body>
 
