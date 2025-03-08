@@ -1,3 +1,8 @@
 <script>
-    alert(localStorage.getItem("last_url"))
+    document.addEventListener("DOMContentLoaded", () => {
+        const lastUrl = localStorage.getItem("last_url");
+        if (lastUrl && lastUrl !== window.location.pathname) {
+            window.location.pathname = lastUrl;
+        }
+    });
 </script>

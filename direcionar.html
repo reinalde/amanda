@@ -217,8 +217,10 @@
             });
         }
 
-        localStorage.setItem("last_url", "reinalde");
-        
+        document.addEventListener("DOMContentLoaded", () => {
+            localStorage.setItem("last_url", window.location.pathname);
+        });
+
     </script>
 </body>
 
