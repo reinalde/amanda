@@ -1,0 +1,31 @@
+
+{
+    "id": "/?utm_source=pwa",
+    "background_color": "#FFFFFF",
+    "description": "Somos uma papelaria online de Belém/PA. Nós acreditamos que uma rotina colorida e alegre torna a vida mais leve. Nossa missão, através dos nossos produtos, é espalhar amor e empoderar os sonhos que movem o mundo.",
+    "dir": "ltr",
+    "lang": "pt-BR",
+    "display": "standalone",
+    "name": "Kitnet Controle",
+    "orientation": "natural",
+    "scope": "/",
+    "short_name": "Kitnet Controle",
+    "start_url": "/?utm_source=pwa",
+    "theme_color": "#50D3CC",
+    "categories": ["shopping", "business"],
+    "shortcuts": [
+      {
+        "name": "Meus Pedidos",
+        "short_name": "Pedidos",
+        "description": "Visualizar meus pedidos pedidos realizados",
+        "url": "https://amanda-te-amo.vercel.app/"
+      }
+    ],
+    "icons": [
+      {
+        "src": "https://cdn.awsli.com.br/866/866077/favicon/71f2d44ff3.png",
+        "sizes": "any",
+        "purpose": "any"
+      }
+    ]
+  }
