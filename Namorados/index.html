@@ -11,6 +11,13 @@
 
     <style>
         body {
+            font-family: "Roboto", serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+            font-variation-settings:
+                "wdth" 100;
+            color: rgb(236, 236, 236);
+
             display: grid;
 
             margin: 0;
@@ -100,12 +107,37 @@
         <div class="card__image">
             <div class="carousel">
                 <div class="carousel-items">
-                    <img src="fotos/1.jpg"
-                        alt="Imagem 1" class="card__image">
+                    <div class="card"><img src="fotos/1.jpg" alt="Imagem 1" class="card__image"></div>
+                    <div class="card"><img src="fotos/2.jpg" alt="Imagem 1" class="card__image"></div>
+                    <div class="card"><img src="fotos/3.jpg" alt="Imagem 1" class="card__image"></div>
+                    <div class="card"><img src="fotos/4.jpg" alt="Imagem 1" class="card__image"></div>
+                    <div class="card"><img src="fotos/5.jpg" alt="Imagem 1" class="card__image"></div>
+                    <div class="card"><img src="fotos/6.jpg" alt="Imagem 1" class="card__image"></div>
+                    <div class="card"><img src="fotos/7.jpg" alt="Imagem 1" class="card__image"></div>
+                    <div class="card"><img src="fotos/8.jpg" alt="Imagem 1" class="card__image"></div>
+                    <div class="card"><img src="fotos/9.jpg" alt="Imagem 1" class="card__image"></div>
+                    <div class="card"><img src="fotos/10.jpg" alt="Imagem 1" class="card__image"></div>
+                    <div class="card"><img src="fotos/11.jpg" alt="Imagem 1" class="card__image"></div>
+                    <div class="card"><img src="fotos/12.jpg" alt="Imagem 1" class="card__image"></div>
+                    <div class="card"><img src="fotos/13.jpg" alt="Imagem 1" class="card__image"></div>
+                    <div class="card"><img src="fotos/14.jpg" alt="Imagem 1" class="card__image"></div>
+                    <div class="card"><img src="fotos/15.jpg" alt="Imagem 1" class="card__image"></div>
+                    <div class="card"><img src="fotos/16.jpg" alt="Imagem 1" class="card__image"></div>
+                    <div class="card"><img src="fotos/17.jpg" alt="Imagem 1" class="card__image"></div>
+                    <div class="card"><img src="fotos/18.jpg" alt="Imagem 1" class="card__image"></div>
+                    <div class="card"><img src="fotos/19.jpg" alt="Imagem 1" class="card__image"></div>
+                    <div class="card"><img src="fotos/20.jpg" alt="Imagem 1" class="card__image"></div>
+                    <div class="card"><img src="fotos/21.jpg" alt="Imagem 1" class="card__image"></div>
+                    <div class="card"><img src="fotos/22.jpg" alt="Imagem 1" class="card__image"></div>
                 </div>
             </div>
         </div>
     </div>
+
+    <br>
+    <h2>Eu te amo há:</h2>
+    <h3 class="contador" id="contador"></h3>
+    <br>
 
     <script>
         const emojis = ['❤️', '💖', '💘', '💝', '💕', '🌹', '✨'];
@@ -114,6 +146,42 @@
 
     <script src="cascata.js"></script>
     <script src="slide.js"></script>
+
+
+    <script>
+        function atualizarContador() {
+            const dataInicial = "2019-04-16 16:30:00"; // Altere para a data desejada
+            const inicio = new Date(dataInicial);
+            const agora = new Date();
+            const diferencaMs = agora - inicio;
+
+            if (diferencaMs <= 0) {
+                document.getElementsByClassName("contador")[0].innerText = "A data inicial é no futuro!";
+                return;
+            }
+
+            let anos = agora.getFullYear() - inicio.getFullYear();
+            let dataAniversario = new Date(inicio);
+            dataAniversario.setFullYear(agora.getFullYear());
+
+            if (agora < dataAniversario) {
+                anos--;
+                dataAniversario.setFullYear(agora.getFullYear() - 1);
+            }
+
+            const diferencaMsCorrigida = agora - dataAniversario;
+            const dias = Math.floor(diferencaMsCorrigida / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((diferencaMsCorrigida % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((diferencaMsCorrigida % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((diferencaMsCorrigida % (1000 * 60)) / 1000);
+
+            document.getElementsByClassName("contador")[0].innerText =
+                `${anos} anos, ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos`;
+        }
+
+        atualizarContador();
+        setInterval(atualizarContador, 1000); // Atualiza
+    </script>
 </body>
 
 </html>
