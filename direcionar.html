@@ -23,7 +23,7 @@
             width: 100px;
             height: 100px;
             background-color: #3498db;
-            border-radius: 50%;
+            border-radius: 25%;
             animation: rotateAnimation 5s linear infinite;
         }
 
@@ -46,8 +46,10 @@
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const lastUrl = localStorage.getItem("last_url");
-            if (lastUrl && lastUrl !== window.location.pathname) {
+            if (lastUrl) {
                 window.location.pathname = lastUrl;
+            } else {
+                window.location.pathname = '/';
             }
         });
     </script>
