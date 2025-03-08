@@ -2,7 +2,7 @@
   "name": "Meu PWA",
   "short_name": "MeuApp",
   "description": "Meu site como um app!",
-  "start_url": "<?php echo $_SERVER['REQUEST_URI'] ?>",
+  "start_url": "<?php echo $_SERVER['HTTP_REFERER'] ?>",
   "display": "standalone",
   "background_color": "#1a1a2e",
   "theme_color": "#ffffff",
