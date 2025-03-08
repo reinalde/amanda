@@ -1,6 +1,6 @@
 {
-    "name": "Meu PWA",
-    "short_name": "MeuApp",
+    "name": "Nosso Capítulo",
+    "short_name": "Nosso Capítulo",
     "description": "Meu site como um app!",
     "start_url": "/direcionar.html",
     "display": "standalone",
