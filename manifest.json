@@ -11,14 +11,14 @@
     "scope": "/",
     "short_name": "Kitnet Controle",
     "start_url": "/?utm_source=pwa",
-    "theme_color": "#50D3CC",
+    "theme_color": "#1a1a2e",
     "categories": ["shopping", "business"],
     "shortcuts": [
       {
         "name": "Meus Pedidos",
         "short_name": "Pedidos",
         "description": "Visualizar meus pedidos pedidos realizados",
-        "url": "https://amanda-te-amo.vercel.app/"
+        "url": "https://amanda-te-amo.vercel.app"
       }
     ],
     "icons": [
