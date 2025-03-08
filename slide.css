@@ -74,3 +74,12 @@
   color: rgb(236, 212, 182);
   margin-top: 5px;
 }
+
+.mensagem {
+  text-align: center;
+  text-align: justify;
+  /* color: rgb(236, 212, 182); */
+  margin-top: 5px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
