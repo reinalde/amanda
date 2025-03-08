@@ -171,7 +171,7 @@
 
     <script>
         function atualizarContador() {
-            const dataInicial = "2019-04-06 16:30:00";
+            const dataInicial = "2019-04-06 16:30";
             const inicio = new Date(dataInicial);
             const agora = new Date();
             const diferencaMs = agora - inicio;
@@ -196,7 +196,7 @@
                 dias += ultimoDiaDoMes;
             }
 
-            const diferencaMsCorrigida = agora - new Date(agora.getFullYear(), agora.getMonth(), agora.getDate());
+            const diferencaMsCorrigida = agora - new Date(agora.getFullYear(), agora.getMonth(), agora.getDate(), inicio.getHours(), inicio.getMinutes());
             const horas = Math.floor((diferencaMsCorrigida % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutos = Math.floor((diferencaMsCorrigida % (1000 * 60 * 60)) / (1000 * 60));
             const segundos = Math.floor((diferencaMsCorrigida % (1000 * 60)) / 1000);
