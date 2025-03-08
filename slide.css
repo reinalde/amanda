@@ -76,10 +76,37 @@
 }
 
 .mensagem {
+  max-width: 50%;
   text-align: center;
-  text-align: justify;
-  /* color: rgb(236, 212, 182); */
   margin-top: 5px;
   margin-left: 20px;
   margin-right: 20px;
+}
+
+@media (max-width: 467px) {
+  .col-md-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+
+
+
+.divisao-tracinho {
+  position: relative;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Mini tracinho acima */
+.divisao-tracinho::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 200px;
+  height: 2px;
+  background: rgb(219, 219, 219);
+  transform: translateX(-50%);
 }
