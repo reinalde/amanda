@@ -3,5 +3,11 @@
         "api/manifest.php": {
             "runtime": "vercel-php@0.7.1"
         }
-    }
+    },
+    "routes": [
+        {
+            "src": "/manifest.json",
+            "dest": "/api/manifest.php"
+        }
+    ]
 }
