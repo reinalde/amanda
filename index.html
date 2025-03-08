@@ -217,15 +217,8 @@
             });
         }
 
-        navigator.serviceWorker.onmessage = (event) => {
-            if (event.data.type === "getUrl") {
-                event.ports[0].postMessage(localStorage.getItem("last_url") || "/");
-            }
-        };
+        localStorage.setItem("last_url", "index__.html");
 
-        window.addEventListener("beforeunload", () => {
-            localStorage.setItem("last_url", "index__.html");
-        });
     </script>
 </body>
 
