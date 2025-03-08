@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="slide.css">
 
     <link rel="manifest" href="manifest.json" />
-    
+
     <style>
         body {
             font-family: "Roboto", serif;
@@ -193,12 +193,21 @@
             const minutos = Math.floor((diferencaMsCorrigida % (1000 * 60 * 60)) / (1000 * 60));
             const segundos = Math.floor((diferencaMsCorrigida % (1000 * 60)) / 1000);
 
-            document.getElementById("contador").innerText = 
+            document.getElementById("contador").innerText =
                 `${anos} anos, ${meses} meses, ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos`;
         }
 
         atualizarContador();
         setInterval(atualizarContador, 1000); // Atualiza a cada segundo ⏳
+    </script>
+
+
+    <script type="text/javascript">
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
     </script>
 </body>
 
