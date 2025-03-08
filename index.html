@@ -167,31 +167,36 @@
             const diferencaMs = agora - inicio;
 
             if (diferencaMs <= 0) {
-                document.getElementsByClassName("contador")[0].innerText = "A data inicial é no futuro!";
+                document.getElementById("contador").innerText = "A data inicial é no futuro!";
                 return;
             }
 
             let anos = agora.getFullYear() - inicio.getFullYear();
-            let dataAniversario = new Date(inicio);
-            dataAniversario.setFullYear(agora.getFullYear());
+            let meses = agora.getMonth() - inicio.getMonth();
+            let dias = agora.getDate() - inicio.getDate();
 
-            if (agora < dataAniversario) {
+            if (meses < 0) {
                 anos--;
-                dataAniversario.setFullYear(agora.getFullYear() - 1);
+                meses += 12;
             }
 
-            const diferencaMsCorrigida = agora - dataAniversario;
-            const dias = Math.floor(diferencaMsCorrigida / (1000 * 60 * 60 * 24));
+            if (dias < 0) {
+                meses--;
+                const ultimoDiaDoMes = new Date(agora.getFullYear(), agora.getMonth(), 0).getDate();
+                dias += ultimoDiaDoMes;
+            }
+
+            const diferencaMsCorrigida = agora - new Date(agora.getFullYear(), agora.getMonth(), agora.getDate());
             const horas = Math.floor((diferencaMsCorrigida % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutos = Math.floor((diferencaMsCorrigida % (1000 * 60 * 60)) / (1000 * 60));
             const segundos = Math.floor((diferencaMsCorrigida % (1000 * 60)) / 1000);
 
-            document.getElementsByClassName("contador")[0].innerText =
-                `${anos} anos, ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos`;
+            document.getElementById("contador").innerText = 
+                `${anos} anos, ${meses} meses, ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos`;
         }
 
         atualizarContador();
-        setInterval(atualizarContador, 1000); // Atualiza
+        setInterval(atualizarContador, 1000); // Atualiza a cada segundo ⏳
     </script>
 </body>
 
