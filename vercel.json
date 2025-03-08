@@ -1,13 +1,17 @@
 {
     "functions": {
-      "api/*.php": {
-        "runtime": "vercel-php@0.6.1"
-      }
+        "api/manifest.php": {
+            "runtime": "vercel-php@0.7.1"
+        }
     },
     "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "/api/*.php"
-      }
+        {
+            "src": "/api/manifest.php",
+            "dest": "/api/manifest.php"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/api/manifest.php"
+        }
     ]
-  }
+}
