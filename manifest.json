@@ -2,7 +2,7 @@
   "name": "Meu PWA",
   "short_name": "MeuApp",
   "description": "Meu site como um app!",
-  "start_url": "/",
+  "start_url": "/index__.html",
   "display": "standalone",
   "background_color": "#1a1a2e",
   "theme_color": "#ffffff",
