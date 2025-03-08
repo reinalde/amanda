@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Chuva de Emojis com Barra de Amor</title>
+
+
+    <link rel="stylesheet" href="slide.css">
+
+    <style>
+        body {
+            display: grid;
+
+            margin: 0;
+            /* overflow: hidden; */
+            background-color: #1a1a2e;
+            justify-items: center;
+            /* width: 100vw; */
+            /* height: 100vh; */
+            /* position: fixed; */
+        }
+
+        .emoji {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.8;
+            animation: fall linear infinite;
+            cursor: pointer;
+            position: fixed;
+            z-index: 2;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 1;
+            }
+        }
+
+        .love-bar-container {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            background-color: #444;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 20px;
+            position: fixed;
+            z-index: 1;
+        }
+
+        .spotify {
+            top: 50px;
+            position: relative;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        .love-bar {
+            width: 0%;
+            height: 100%;
+            background-image: linear-gradient(to right, #f0f365, #ff4d6d);
+            transition: width 0.3s ease-in-out;
+        }
+
+        @media (max-width: 600px) {
+            .emoji {
+                font-size: 1.5rem;
+            }
+
+            .love-bar-container {
+                width: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="love-bar-container">
+        <div class="love-bar" id="loveBar"></div>
+    </div>
+
+
+    <div class="spotify">
+        <iframe data-v-8eaaeee0="" src="https://open.spotify.com/embed/track/68cPbG7hJnwDW9nPX1uQcX" width="100%"
+            frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    </div>
+
+
+    <div class="card">
+        <div class="card__image">
+            <div class="carousel">
+                <div class="carousel-items">
+                    <img src="https://images.unsplash.com/photo-1533461502717-83546f485d24?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60"
+                        alt="Imagem 1" class="card__image">
+                    <img src="https://images.unsplash.com/photo-1559386484-97dfc0e15539?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1234&amp;q=80"
+                        alt="Imagem 2" class="card__image">
+                    <img src="https://images.unsplash.com/photo-1530651788726-1dbf58eeef1f?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=882&amp;q=80"
+                        alt="Imagem 3" class="card__image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const emojis = ['❤️', '💖', '💘', '💝', '💕', '🌹', '✨'];
+        const emoji_grande = '💖';
+    </script>
+
+    <script src="cascata.js"></script>
+    <script src="slide.js"></script>
+</body>
+
+</html>
+
+<!-- NOME URL NossoCapitulo.com -->
