@@ -80,7 +80,7 @@
             border-radius: 25px;
             position: relative;
             overflow: hidden;
-            border: 3px solid #555;
+            border: 2px solid #555;
             display: flex;
             justify-content: center;
             align-items: flex-start;
@@ -106,20 +106,53 @@
             z-index: 1;
         }
 
-        @media (max-width: 600px) {
-            .emoji {
-                font-size: 1.5rem;
-            }
+
+        .linha-cinza-top {
+            width: 100%;
+            height: 1px;
+            background-color: gray;
+            position: absolute;
+            top: 25%;
+            left: 0;
+            transform: translateY(-50%);
+            opacity: 0.2;
         }
 
+        .linha-cinza-center {
+            width: 100%;
+            height: 1px;
+            background-color: gray;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            opacity: 0.2;
+        }
+
+        .linha-cinza-bottom {
+            width: 100%;
+            height: 1px;
+            background-color: gray;
+            position: absolute;
+            top: 75%;
+            left: 0;
+            transform: translateY(-50%);
+            opacity: 0.2;
+        }
+
+        @media (max-width: 600px) {
+            .emoji {
+                font-size: 2.5rem;
+            }
+        }
     </style>
 </head>
 
 <body>
 
     <div class="spotify">
-        <iframe src="https://open.spotify.com/embed/track/68cPbG7hJnwDW9nPX1uQcX" width="100%"
-            frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        <iframe src="https://open.spotify.com/embed/track/68cPbG7hJnwDW9nPX1uQcX" width="100%" frameborder="0"
+            allowtransparency="true" allow="encrypted-media"></iframe>
     </div>
 
 
@@ -127,6 +160,9 @@
         <div class="love-bar-container">
             <div class="love-bar-emoji" id="loveBarEmoji">❤️</div>
             <div class="love-bar" id="loveBar"></div>
+            <div class="linha-cinza-top"></div>
+            <div class="linha-cinza-center"></div>
+            <div class="linha-cinza-bottom"></div>
         </div>
 
         <div class="card">
