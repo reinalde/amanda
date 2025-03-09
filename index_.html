@@ -56,105 +56,84 @@
             }
         }
 
+        .love-bar-container {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            background-color: #444;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 20px;
+            position: fixed;
+            z-index: 1;
+        }
+
         .spotify {
-            top: 30px;
-            margin-bottom: -15px;
+            top: 50px;
             position: relative;
             padding-left: 2rem;
             padding-right: 2rem;
         }
 
-        .container {
-            display: flex;
-            align-items: center;
-            gap: 0px;
-            margin-left: -10px;
-            margin-right: -10px;
-        }
-
-        .love-bar-container {
-            width: 30px;
-            height: 300px;
-            transform: translateX(-60%);
-            background-color: #444;
-            border-radius: 25px;
-            position: relative;
-            overflow: hidden;
-            border: 3px solid #555;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            margin-left: -30px;
-        }
-
         .love-bar {
-            position: absolute;
-            width: 100%;
-            height: 0%;
-            background-image: linear-gradient(to top, #f0f365, #ff4d6d);
-            transition: height 0.3s ease-in-out;
-            bottom: 0;
-        }
-
-        .love-bar-emoji {
-            position: absolute;
-            font-size: 12px;
-            height: 20px;
-            bottom: 0;
-            transition: height 0.3s ease-in-out;
-            z-index: 1;
+            width: 0%;
+            height: 100%;
+            background-image: linear-gradient(to right, #f0f365, #ff4d6d);
+            transition: width 0.3s ease-in-out;
         }
 
         @media (max-width: 600px) {
             .emoji {
                 font-size: 1.5rem;
             }
-        }
 
+            .love-bar-container {
+                width: 300px;
+            }
+        }
     </style>
 </head>
 
 <body>
+    <div class="love-bar-container">
+        <div class="love-bar" id="loveBar"></div>
+    </div>
+
 
     <div class="spotify">
-        <iframe src="https://open.spotify.com/embed/track/68cPbG7hJnwDW9nPX1uQcX" width="100%"
+        <iframe data-v-8eaaeee0="" src="https://open.spotify.com/embed/track/68cPbG7hJnwDW9nPX1uQcX" width="100%"
             frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
     </div>
 
 
-    <div class="container">
-        <div class="love-bar-container">
-            <div class="love-bar-emoji" id="loveBarEmoji">❤️</div>
-            <div class="love-bar" id="loveBar"></div>
-        </div>
-
-        <div class="card">
-            <div class="card__image">
-                <div class="carousel">
-                    <div class="carousel-items">
-                        <div class="card"><img src="fotos/1.jpg" alt="Imagem 1" class="card__image"></div>
-                        <div class="card"><img src="fotos/2.jpg" alt="Imagem 1" class="card__image"></div>
-                        <div class="card"><img src="fotos/3.jpg" alt="Imagem 1" class="card__image"></div>
-                        <div class="card"><img src="fotos/4.jpg" alt="Imagem 1" class="card__image"></div>
-                        <div class="card"><img src="fotos/5.jpg" alt="Imagem 1" class="card__image"></div>
-                        <div class="card"><img src="fotos/6.jpg" alt="Imagem 1" class="card__image"></div>
-                        <div class="card"><img src="fotos/7.jpg" alt="Imagem 1" class="card__image"></div>
-                        <div class="card"><img src="fotos/8.jpg" alt="Imagem 1" class="card__image"></div>
-                        <div class="card"><img src="fotos/9.jpg" alt="Imagem 1" class="card__image"></div>
-                        <div class="card"><img src="fotos/10.jpg" alt="Imagem 1" class="card__image"></div>
-                        <div class="card"><img src="fotos/11.jpg" alt="Imagem 1" class="card__image"></div>
-                        <div class="card"><img src="fotos/12.jpg" alt="Imagem 1" class="card__image"></div>
-                        <div class="card"><img src="fotos/13.jpg" alt="Imagem 1" class="card__image"></div>
-                        <div class="card"><img src="fotos/14.jpg" alt="Imagem 1" class="card__image"></div>
-                        <div class="card"><img src="fotos/15.jpg" alt="Imagem 1" class="card__image"></div>
-                        <div class="card"><img src="fotos/16.jpg" alt="Imagem 1" class="card__image"></div>
-                        <div class="card"><img src="fotos/17.jpg" alt="Imagem 1" class="card__image"></div>
-                        <div class="card"><img src="fotos/18.jpg" alt="Imagem 1" class="card__image"></div>
-                        <div class="card"><img src="fotos/19.jpg" alt="Imagem 1" class="card__image"></div>
-                        <div class="card"><img src="fotos/20.jpg" alt="Imagem 1" class="card__image"></div>
-                        <div class="card"><img src="fotos/21.jpg" alt="Imagem 1" class="card__image"></div>
-                        <div class="card"><img src="fotos/22.jpg" alt="Imagem 1" class="card__image"></div>
-                    </div>
+    <div class="card">
+        <div class="card__image">
+            <div class="carousel">
+                <div class="carousel-items">
+                    <div class="card"><img src="fotos/1.jpg" alt="Imagem 1" class="card__image"></div>
+                    <div class="card"><img src="fotos/2.jpg" alt="Imagem 1" class="card__image"></div>
+                    <div class="card"><img src="fotos/3.jpg" alt="Imagem 1" class="card__image"></div>
+                    <div class="card"><img src="fotos/4.jpg" alt="Imagem 1" class="card__image"></div>
+                    <div class="card"><img src="fotos/5.jpg" alt="Imagem 1" class="card__image"></div>
+                    <div class="card"><img src="fotos/6.jpg" alt="Imagem 1" class="card__image"></div>
+                    <div class="card"><img src="fotos/7.jpg" alt="Imagem 1" class="card__image"></div>
+                    <div class="card"><img src="fotos/8.jpg" alt="Imagem 1" class="card__image"></div>
+                    <div class="card"><img src="fotos/9.jpg" alt="Imagem 1" class="card__image"></div>
+                    <div class="card"><img src="fotos/10.jpg" alt="Imagem 1" class="card__image"></div>
+                    <div class="card"><img src="fotos/11.jpg" alt="Imagem 1" class="card__image"></div>
+                    <div class="card"><img src="fotos/12.jpg" alt="Imagem 1" class="card__image"></div>
+                    <div class="card"><img src="fotos/13.jpg" alt="Imagem 1" class="card__image"></div>
+                    <div class="card"><img src="fotos/14.jpg" alt="Imagem 1" class="card__image"></div>
+                    <div class="card"><img src="fotos/15.jpg" alt="Imagem 1" class="card__image"></div>
+                    <div class="card"><img src="fotos/16.jpg" alt="Imagem 1" class="card__image"></div>
+                    <div class="card"><img src="fotos/17.jpg" alt="Imagem 1" class="card__image"></div>
+                    <div class="card"><img src="fotos/18.jpg" alt="Imagem 1" class="card__image"></div>
+                    <div class="card"><img src="fotos/19.jpg" alt="Imagem 1" class="card__image"></div>
+                    <div class="card"><img src="fotos/20.jpg" alt="Imagem 1" class="card__image"></div>
+                    <div class="card"><img src="fotos/21.jpg" alt="Imagem 1" class="card__image"></div>
+                    <div class="card"><img src="fotos/22.jpg" alt="Imagem 1" class="card__image"></div>
                 </div>
             </div>
         </div>
@@ -175,7 +154,7 @@
     </h4>
     <br>
     <br>
-    &nbsp;
+    &nbsp; 
 
     <!-- <button id="install-button" style="display: none;">
         Instalar aplicativo
@@ -185,7 +164,7 @@
 
     <script>
         const emojis = ['❤️', '💖', '💘', '💝', '💕', '🌹', '✨'];
-        const emoji_grande = '❤️';
+        const emoji_grande = '💖';
     </script>
 
     <script src="cascata.js"></script>
@@ -218,7 +197,7 @@
                 const ultimoDiaDoMes = new Date(inicio.getFullYear(), inicio.getMonth(), 0).getDate();
                 dias += ultimoDiaDoMes;
             }
-
+            
             const diferencaMsCorrigida = agora - new Date(inicio.getFullYear(), inicio.getMonth(), inicio.getDay(), inicio.getHours(), inicio.getMinutes());
             const horas = Math.floor((diferencaMsCorrigida % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutos = Math.floor((diferencaMsCorrigida % (1000 * 60 * 60)) / (1000 * 60));
@@ -252,4 +231,4 @@
 <!-- NOME PARA URL NossoCapitulo.com -->
 
 <!-- criptografar -->
-<!-- https://devina.io/js-obfuscator -->
+ <!-- https://devina.io/js-obfuscator -->

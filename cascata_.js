@@ -38,9 +38,7 @@ function increaseLove() {
     if (loveLevel < 100) {
         loveLevel += 10;
         if (loveLevel > 100) loveLevel = 100;
-        document.getElementById('loveBar').style.height = `${loveLevel}%`;
-        document.getElementById('loveBarEmoji').style.height = `${loveLevel}%`;
-        document.getElementById('loveBarEmoji').style.fontSize = 12 + loveLevel / 10 + 'px';
+        document.getElementById('loveBar').style.width = `${loveLevel}%`;
     }
 
     if (loveLevel === 100) {
@@ -62,11 +60,9 @@ function explodeLove() {
     setTimeout(() => {
         document.getElementById('loveBar').style.display = 'none';
         loveLevel = 0;
-        document.getElementById('loveBar').style.height = '0%';
+        document.getElementById('loveBar').style.width = '0%';
         document.getElementById('loveBar').style.display = 'block';
-        document.getElementById('loveBar').style.background = 'linear-gradient(to top, #ffcc00 , #ff4d6d)';
-        document.getElementById('loveBarEmoji').style.height = '20px';
-        document.getElementById('loveBarEmoji').style.fontSize = '12px';
+        document.getElementById('loveBar').style.background = 'linear-gradient(to right, #ffcc00 , #ff4d6d)';
         exploded = false;
         normalRain = true;
     }, 6000);
