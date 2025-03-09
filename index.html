@@ -103,7 +103,17 @@
             height: 20px;
             bottom: 0;
             transition: height 0.3s ease-in-out;
+            pointer-events: none;
+            user-select: none;
             z-index: 1;
+        }
+
+        .love-bar-porcentagem {
+            text-align: center;
+            margin-top: -5px;
+            font-size: 60%;
+            pointer-events: none;
+            user-select: none;
         }
 
 
@@ -161,13 +171,13 @@
             <div class="love-bar-emoji" id="loveBarEmoji">❤️</div>
             <div class="love-bar" id="loveBar"></div>
             <div class="linha-cinza-top">
-                <div style="text-align: center;margin-top: -5px;font-size: 60%;">75</div>
+                <div class="love-bar-porcentagem">75</div>
             </div>
             <div class="linha-cinza-center">
-                <div style="text-align: center;margin-top: -5px;font-size: 60%;">50</div>
+                <div class="love-bar-porcentagem">50</div>
             </div>
             <div class="linha-cinza-bottom">
-                <div style="text-align: center;margin-top: -5px;font-size: 60%;">25</div>
+                <div class="love-bar-porcentagem">25</div>
             </div>
         </div>
 
