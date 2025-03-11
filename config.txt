@@ -1,0 +1,5 @@
+
+<!-- NOME PARA URL NossoCapitulo.com -->
+
+<!-- criptografar -->
+<!-- https://devina.io/js-obfuscator -->
