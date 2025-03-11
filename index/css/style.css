@@ -82,6 +82,13 @@ img {
     height: auto;
 }
 
+.img-destaque {
+    width: 485px;
+    max-height: 485px;
+    min-height: 485px;
+    object-fit: cover;
+}
+
 @media (max-width: 1024px) {
     .header {
         padding: 1rem;
@@ -99,10 +106,18 @@ img {
     .title {
         font-size: 3.5em;
     }
+
+    .img-destaque {
+        min-height: 100%;
+    }
 }
 
 @media (max-width: 720px) {
     .title {
         font-size: 2.5em;
+    }
+
+    .img-destaque {
+        min-height: 100%;
     }
 }
