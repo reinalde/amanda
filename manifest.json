@@ -5,7 +5,7 @@
     "start_url": "/direcionar.html",
     "display": "standalone",
     "background_color": "#1a1a2e",
-    "theme_color": "#ffffff",
+    "theme_color": "#1a1a2e",
     "icons": [
       {
         "src": "/192x192.png",
