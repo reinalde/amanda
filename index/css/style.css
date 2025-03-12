@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+HU:wght@100..400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
     box-sizing: border-box;
@@ -7,7 +8,8 @@
 }
 
 body {
-    font-family: "Roboto", serif;
+    /* font-family: "Roboto", serif; */
+    font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
     font-variation-settings: "wdth" 100;
@@ -29,8 +31,12 @@ body {
     align-items: center;
     display: flex;
     gap: 5px;
+}
+
+.nome-site {
+    font-family: "Playwrite HU", cursive;
     font-size: 1.5em;
-    letter-spacing: 0.1rem;
+    letter-spacing: -0.09rem;
 }
 
 .logo {
@@ -60,12 +66,13 @@ body {
     font-size: 4.5em;
     line-height: 0.8;
     /* font-weight: bold; */
-    font-weight: 900;
+    font-weight: 800;
 
 
     background-image: linear-gradient(to bottom, rgb(255 255 255), #fdaab9, #ff7e95);
     color: black;
-    -webkit-background-clip: text;
+    /* -webkit-background-clip: text; */
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -119,5 +126,9 @@ img {
 
     .img-destaque {
         min-height: 100%;
+    }
+
+    .nome-site {
+        font-size: 1.2em;
     }
 }
