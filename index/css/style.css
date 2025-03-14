@@ -90,10 +90,43 @@ img {
 }
 
 .img-destaque {
-    width: 485px;
+    /* width: 485px;
+    max-height: 485px;
+    min-height: 485px;
+    object-fit: cover; */
+
+    width: 385px;
+    height: 450px;
     max-height: 485px;
     min-height: 485px;
     object-fit: cover;
+}
+
+.botao-align{
+    margin-top: 20px;
+}
+
+.botao {
+    background: linear-gradient(45deg, #ff4e6d, #ff6b6b);
+    border: none;
+    padding: 15px 60px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.botao:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(255, 107, 107, 0.5);
+}
+
+.botao:active {
+    transform: scale(0.95);
 }
 
 @media (max-width: 1024px) {
@@ -130,5 +163,9 @@ img {
 
     .nome-site {
         font-size: 1.2em;
+    }
+
+    .botao-align{
+        text-align: center;
     }
 }

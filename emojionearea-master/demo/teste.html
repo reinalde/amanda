@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../dist/emojionearea.min.css" media="screen">
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="../dist/emojionearea.js"></script>
+</head>
+
+<!-- <body style="display: grid;justify-items: center;"> -->
+
+<body>
+
+    <div id="standalone" data-emoji-placeholder=":smiley:"></div>
+    <div id="standalone2" data-emoji-placeholder=":smiley:"></div>
+    <div id="standalone3" data-emoji-placeholder=":smiley:"></div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#standalone").emojioneArea({
+                standalone: true,
+                autocomplete: false
+            });
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#standalone2").emojioneArea({
+                standalone: true,
+                autocomplete: false
+            });
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#standalone3").emojioneArea({
+                standalone: true,
+                autocomplete: false
+            });
+        });
+    </script>
+
+</body>
+
+</html>
