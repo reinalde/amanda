@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Grid Flexível</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/mobile.css">
+
+    <link rel="stylesheet" type="text/css" href="../emoji/emojionearea.min.css" media="screen">
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="../emoji/emojionearea.js"></script>
+
+</head>
+
+<body>
+
+    <div class="header lg">
+        <div class="header-alinhar">
+            <div class="logo">
+                <img src="../logo/logo.png">
+            </div>
+            <div class="nome-site">NossoCapítulo</div>
+        </div>
+    </div>
+
+    <div class="criar-container lg">
+        <div class="box">
+            <div class="div-nome-memoria etapa-1">
+                <div class="title-header">
+                    Nome da <span>memória</span>
+                </div>
+
+                <div class="subtitle">
+                    Digite o nome da memória. Ele será usado no link de acesso. Ex: "Reinalde & Amanda"
+                    ou "Feliz Aniversário".
+                </div>
+
+                <div class="input-container">
+                    <input type="text" id="nome-memoria" placeholder='Ex: "Reinalde & Amanda" ou "Feliz Aniversário"'
+                        minlength="3" maxlength="80" autocomplete="off" required>
+                </div>
+
+                <div class="button-center">
+                    <button id="nome-memoria-button" class="criar-botao" data-etapa="etapa" data-etapa-atual="1"
+                        data-proxima-etapa="2" disabled>Próxima etapa</button>
+                </div>
+            </div>
+
+            <div class="div-fotos-memoria etapa-2 hidden">
+                <div class="title-header">
+                    Fotos da <span>memória</span>
+                </div>
+
+                <div class="subtitle">
+                    Escolha as imagens para personalizar sua página. Você pode adicionar até 8 fotos.
+                </div>
+
+                <div id="fotosCount" style="margin-bottom: 10px"></div>
+
+                <div style="display: grid;text-align: center;justify-content: center;">
+                    <div class="scroll-container d-flex" id="fotos-preview">
+
+                        <div class="card-fotos" id="file_hidden">
+                            <div class="image-upload">
+                                <label for="fileInput" style="padding: 100%; -webkit-tap-highlight-color: transparent;">
+                                    <div class="upload-icon">+</div>
+                                </label>
+                                <input type="file" id="fileInput" accept="image/png, image/jpeg" style="display: none;"
+                                    multiple>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="button-center">
+                    <button id="fotos-memoria-button" class="criar-botao" data-etapa="etapa" data-etapa-atual="2"
+                        data-proxima-etapa="3" disabled>Próxima etapa</button>
+                </div>
+            </div>
+
+            <div class="div-data-memoria etapa-3 hidden">
+                <div class="title-header">
+                    Data da <span>memória</span>
+                </div>
+
+                <div class="subtitle">
+                    Escolha a data e hora que melhor representa o começo dessa memória.
+                </div>
+
+                <div class="input-group">
+                    <div class="input-container">
+                        <label for="date">Data da memória</label>
+                        <input type="date" id="data_memoria">
+                    </div>
+                    <div class="input-container">
+                        <label for="time">Hora da memória</label>
+                        <input type="time" id="hora_memoria">
+                    </div>
+                </div>
+
+                <div class="button-center">
+                    <button id="data-memoria-button" class="criar-botao" data-etapa="etapa" data-etapa-atual="3"
+                        data-proxima-etapa="4" disabled>Próxima etapa</button>
+                </div>
+            </div>
+
+
+            <div class="div-mensagem-memoria etapa-4 hidden">
+                <div class="title-header">
+                    Mensagem
+                </div>
+
+                <div class="subtitle">
+                    Escreva uma mensagem especial! Use sua criatividade para compartilhar a história dessa memória ou
+                    expressar todo o seu amor.
+                </div>
+
+                <div class="input-container">
+                    <textarea id="mensagem-memoria" placeholder="Escreva uma mensagem especial" rows="10"></textarea>
+                </div>
+
+                <div class="button-center">
+                    <button id="mensagem-memoria-button" class="criar-botao" data-etapa="etapa" data-etapa-atual="4"
+                        data-proxima-etapa="5" disabled>Próxima etapa</button>
+                </div>
+            </div>
+
+            <div class="div-musica-memoria etapa-5 hidden">
+                <div class="title-header">
+                    Música da <span>memória</span>
+                </div>
+
+                <div class="subtitle">
+                    Encontre uma música no Spotify, copie o link e cole no campo abaixo.
+                </div>
+
+                <div class="input-container">
+                    <input type="text" id="nome-memoria" placeholder='https://open.spotify.com/track/...'
+                        minlength="3" maxlength="80" autocomplete="off" required>
+                </div>
+
+                <div class="button-center">
+                    <button id="nome-musica-button" class="criar-botao" data-etapa="etapa" data-etapa-atual="5"
+                        data-proxima-etapa="6">Próxima etapa</button>
+                </div>
+            </div>
+
+            <div class="div-emoji-memoria etapa-6 hidden">
+                <div class="title-header">
+                    Emoji
+                </div>
+
+                <div class="subtitle">
+                    Escolha três emoji para personalizar o plano de fundo da sua página.
+                </div>
+
+                <div class="button-center" style="margin-bottom: 15px;">
+                    <div id="emoji1" data-emoji-placeholder=":smiley:"></div>
+                    <div id="emoji2" data-emoji-placeholder=":smiley:"></div>
+                    <div id="emoji3" data-emoji-placeholder=":smiley:"></div>
+                </div>
+
+                <div class="button-center">
+                    <button id="emoji-button" class="criar-botao" data-etapa="etapa" data-etapa-atual="6"
+                        data-proxima-etapa="7" disabled>Próxima etapa</button>
+                </div>
+                
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        $("#emoji1").emojioneArea({
+                            standalone: true,
+                            autocomplete: false,
+                            pickerPosition: "primeiro-center",
+                            tonesStyle: "checkbox"
+                        });
+                    });
+                </script>
+
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        $("#emoji2").emojioneArea({
+                            standalone: true,
+                            autocomplete: false,
+                            pickerPosition: "segundo-center",
+                            tonesStyle: "checkbox"
+                        });
+                    });
+                </script>
+
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        $("#emoji3").emojioneArea({
+                            standalone: true,
+                            autocomplete: false,
+                            pickerPosition: "terceiro-center",
+                            tonesStyle: "checkbox"
+                        });
+                    });
+                </script>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="box" style="justify-items: center;">
+                <p style="text-align: center;">Veja como vai ficar 👇</p>
+                <div class="smartphone">
+                    <div class="pontos">
+                        <div class="vermelho"></div>
+                        <div class="amarelo"></div>
+                        <div class="verde"></div>
+                    </div>
+
+                    <div class="barra-url">
+                        nossocapitulo.com/<span id="barra-url-nome"></span>
+                    </div>
+
+                    <div class="html cascata" oncontextmenu="return false" style="user-select:none;">
+
+                        <div class="spotify hidden">
+                            <iframe src="https://open.spotify.com/embed/track/68cPbG7hJnwDW9nPX1uQcX" width="100%"
+                                frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        </div>
+
+                        <div class="display hidden" id="slide_show">
+                            <div class="card-container">
+                                <div class="love-bar-container">
+                                    <div class="love-bar-emoji" id="loveBarEmoji"></div>
+                                    <div class="love-bar" id="loveBar"></div>
+                                    <div class="linha-cinza-top">
+                                        <div class="love-bar-porcentagem">75</div>
+                                    </div>
+                                    <div class="linha-cinza-center">
+                                        <div class="love-bar-porcentagem">50</div>
+                                    </div>
+                                    <div class="linha-cinza-bottom">
+                                        <div class="love-bar-porcentagem">25</div>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card__image">
+                                        <div class="carousel">
+                                            <div class="carousel-items" id="smartphone-preview">
+                                                <!-- <div class="card"></div> -->
+                                                <!-- <div class="card">
+                                                    <img src="../../fotos/1.jpg" alt="Imagem 1" class="card__image">
+                                                </div> -->
+                                                <!-- <div class="card">
+                                                    <img src="../../fotos/2.jpg" alt="Imagem 1"
+                                                        class="card__image">
+                                                </div>
+                                                <div class="card"><img src="../../fotos/3.jpg" alt="Imagem 1"
+                                                        class="card__image">
+                                                </div> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="body">
+                            <div class="titulo hidden">
+                                Compartilhando momentos há:
+
+                                <div class="contador" id="contador"></div>
+
+                                <div class="divisao-tracinho"></div>
+                            </div>
+
+
+
+                            <div class="mensagem hidden" id="mensagem">
+                                A cada dia que passa, meu coração se enche mais de carinho e admiração por você. Cada
+                                sorriso seu ilumina o meu
+                                mundo,
+                                e cada abraço me faz sentir que estou exatamente onde deveria estar. Você é a razão dos
+                                meus
+                                melhores
+                                pensamentos e tudo ao seu lado se torna mais bonito. Eu te amo para sempre ❤️<br>
+                                <br>Feliz dia das mulheres 💃 ✨
+                                <br><br><br><br><br><br><br><br><br><br><br><br><br><br>ddsdds
+                            </div>
+
+                            <br><br>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="lg">
+        <div class="box">
+            <div class="footer">
+                <div class="header-alinhar">
+                    <img src="../logo/logo.png" width="35px">
+                    <div class="nome-site">NossoCapítulo<br></div>
+                </div>
+                <div class="site-descricao">Eternizando momentos especiais.</div>
+
+                <div class="copyright">
+                    Copyright © 2025 - Todos os direitos reservados
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var emojis = ['❤️', '💖', '💘', '💝', '💕', '🌹', '✨'];
+        var emoji_grande = '❤️';
+    </script>
+
+    <script src="../js/cascata.js"></script>
+    <script src="../../js/sem_criptografia/slide.js"></script>
+
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>

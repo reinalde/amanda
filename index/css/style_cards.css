@@ -36,7 +36,7 @@
             font-size: 1rem;
             text-align: center;
             text-transform: uppercase;
-            font-weight: 700;
+            font-weight: 600;
         }
     }
 }
@@ -224,6 +224,8 @@
 
 
 .preco-botao {
+    -webkit-tap-highlight-color: transparent;
+    font-family: "Montserrat", sans-serif;
     min-width: 257px;
     background: linear-gradient(45deg, #ffffff, #ffffff);
     border: none;

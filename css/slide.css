@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+HU:wght@100..400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --curve: 20;
+}
+
+.carousel {
+  width: 100%;
+  max-width: 600px;
+  overflow: hidden;
+  margin: auto;
+  position: relative;
+  border-radius: 10px;
+}
+
+.carousel-items {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.carousel-items img {
+  width: 100%;
+  object-fit: cover;
+  user-select: none;
+}
+
+
+
+
+
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 0fr));
+  gap: 0.5rem;
+  padding: 0;
+  list-style-type: none;
+}
+
+.card {
+  position: relative;
+  display: block;
+  /* height: 90%; */
+  border-radius: calc(var(--curve) * 1px);
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.card__image {
+  width: 250px;
+  height: 450px;
+  max-height: 450px;
+  min-height: 450px;
+  object-fit: cover;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  /* width: 100%; */
+  width: 0px;
+  min-width: 250px;
+}
+
+.contador {
+  text-align: center;
+  color: rgb(236, 212, 182);
+  margin-top: 5px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+h2 {
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.3em;
+}
+
+h3 {
+  font-size: 1.05em;
+}
+
+.mensagem {
+  max-width: 50%;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 5px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+@media (max-width: 467px) {
+  .col-md-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+
+
+
+.divisao-tracinho {
+  position: relative;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Mini tracinho acima */
+.divisao-tracinho::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 200px;
+  height: 2px;
+  background: rgb(219, 219, 219);
+  transform: translateX(-50%);
+}
+
+
+
+
+.emoji {
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0.8;
+  animation: fall linear infinite;
+  cursor: pointer;
+  position: fixed;
+  z-index: 2;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-100px) rotate(0deg);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 1;
+  }
+}
+
+.spotify {
+  top: 30px;
+  margin-bottom: -15px;
+  position: relative;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 0px;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+.love-bar-container {
+  width: 30px;
+  height: 300px;
+  transform: translateX(-60%);
+  background-color: #444;
+  border-radius: 25px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #555;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: -30px;
+}
+
+.love-bar {
+  position: absolute;
+  width: 100%;
+  height: 0%;
+  border-radius: 8px;
+  background-image: linear-gradient(to top, #f0f365, #ff4d6d);
+  transition: height 0.3s ease-in-out;
+  bottom: 0;
+}
+
+.love-bar-emoji {
+  position: absolute;
+  font-size: 12px;
+  height: 20px;
+  bottom: 0;
+  transition: height 0.3s ease-in-out;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+}
+
+.love-bar-porcentagem {
+  text-align: center;
+  margin-top: -5px;
+  font-size: 60%;
+  pointer-events: none;
+  user-select: none;
+}
+
+
+.linha-cinza-top {
+  width: 100%;
+  height: 1px;
+  background-color: gray;
+  position: absolute;
+  top: 25%;
+  left: 0;
+  transform: translateY(-50%);
+  opacity: 0.2;
+}
+
+.linha-cinza-center {
+  width: 100%;
+  height: 1px;
+  background-color: gray;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  opacity: 0.2;
+}
+
+.linha-cinza-bottom {
+  width: 100%;
+  height: 1px;
+  background-color: gray;
+  position: absolute;
+  top: 75%;
+  left: 0;
+  transform: translateY(-50%);
+  opacity: 0.2;
+}
+
+@media (max-width: 600px) {
+  .emoji {
+    font-size: 2.5rem;
+  }
+}

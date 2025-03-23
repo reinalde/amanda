@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Grid Flexível</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/mobile.css">
+    <!-- <link rel="stylesheet" href="../css/style_cards.css"> -->
+</head>
+
+<body>
+
+    <div class="header lg">
+        <div class="header-alinhar">
+            <div class="logo">
+                <img src="../logo/logo.png">
+            </div>
+            <div class="nome-site">NossoCapítulo</div>
+        </div>
+    </div>
+
+    <div class="criar-container lg">
+        <div class="box">
+            <div class="title-header">
+                Nome da <span>memória</span>
+            </div>
+
+            <div class="subtitle">
+                Digite o nome da memória. Ele será usado no link de acesso. Ex: "Gabriel & Clara"
+                ou "Feliz Aniversário".
+            </div>
+
+            <div class="input-container">
+                <!-- <label for="title">nossocapitulo.com/</label> -->
+                <input type="text" id="nome-memoria" placeholder='Ex: "Gabriel & Clara" ou "Feliz Aniversário"'
+                    minlength="3" maxlength="80" autocomplete="off" required>
+            </div>
+
+            <div class="button-center">
+                <button id="nome-memoria-button" class="criar-botao" disabled>Próxima etapa</button>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="box" style="justify-items: center;">
+                <p style="text-align: center;">Veja como vai ficar 👇</p>
+                <div class="smartphone">
+                    <div class="pontos">
+                        <div class="vermelho"></div>
+                        <div class="amarelo"></div>
+                        <div class="verde"></div>
+                    </div>
+
+                    <div class="barra-url">
+                        nossocapitulo.com/<span id="barra-url-nome"></span>
+                    </div>
+
+                    <div class="html cascata">
+
+                        <div class="spotify">
+                            <iframe src="https://open.spotify.com/embed/track/68cPbG7hJnwDW9nPX1uQcX" width="100%"
+                                frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        </div>
+
+                        <div class="display">
+                            <div class="card-container">
+                                <div class="love-bar-container">
+                                    <div class="love-bar-emoji" id="loveBarEmoji">❤️</div>
+                                    <div class="love-bar" id="loveBar"></div>
+                                    <div class="linha-cinza-top">
+                                        <div class="love-bar-porcentagem">75</div>
+                                    </div>
+                                    <div class="linha-cinza-center">
+                                        <div class="love-bar-porcentagem">50</div>
+                                    </div>
+                                    <div class="linha-cinza-bottom">
+                                        <div class="love-bar-porcentagem">25</div>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card__image">
+                                        <div class="carousel">
+                                            <div class="carousel-items">
+                                                <div class="card">
+                                                    <img src="../../fotos/1.jpg" alt="Imagem 1" class="card__image">
+                                                </div>
+                                                <div class="card"><img src="../../fotos/2.jpg" alt="Imagem 1"
+                                                        class="card__image">
+                                                </div>
+                                                <div class="card"><img src="../../fotos/3.jpg" alt="Imagem 1"
+                                                        class="card__image">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+                        <div class="body">
+                            <div class="titulo">Compartilhando momentos há:</div>
+
+                            <div class="contador" id="contador"></div>
+
+                            <div class="divisao-tracinho"></div>
+
+                            <div class="mensagem">
+                                A cada dia que passa, meu coração se enche mais de carinho e admiração por você. Cada
+                                sorriso seu ilumina o meu
+                                mundo,
+                                e cada abraço me faz sentir que estou exatamente onde deveria estar. Você é a razão dos
+                                meus
+                                melhores
+                                pensamentos e tudo ao seu lado se torna mais bonito. Eu te amo para sempre ❤️<br>
+                                <br>Feliz dia das mulheres 💃 ✨
+                                <br><br><br><br><br><br><br><br><br><br><br><br><br><br>ddsdds
+                            </div>
+
+                            <br><br>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const emojis = ['❤️', '💖', '💘', '💝', '💕', '🌹', '✨'];
+        const emoji_grande = '❤️';
+    </script>
+
+    <script src="../js/caascata.js"></script>
+    <!-- <script src="../../js/sem_criptografia/slide.js"></script> -->
+
+    <script>
+        function atualizarContador() {
+            const dataInicial = "2019-04-06 16:30";
+            const inicio = new Date(dataInicial);
+            const agora = new Date();
+            const diferencaMs = agora - inicio;
+
+            if (diferencaMs <= 0) {
+                document.getElementById("contador").innerText = "A data inicial é no futuro!";
+                return;
+            }
+
+            let anos = agora.getFullYear() - inicio.getFullYear();
+            let meses = agora.getMonth() - inicio.getMonth();
+            let dias = agora.getDate() - inicio.getDate();
+
+            if (meses < 0) {
+                anos--;
+                meses += 12;
+            }
+
+            if (dias < 0) {
+                meses--;
+                const ultimoDiaDoMes = new Date(inicio.getFullYear(), inicio.getMonth(), 0).getDate();
+                dias += ultimoDiaDoMes;
+            }
+
+            const diferencaMsCorrigida = agora - new Date(inicio.getFullYear(), inicio.getMonth(), inicio.getDay(), inicio.getHours(), inicio.getMinutes());
+            const horas = Math.floor((diferencaMsCorrigida % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((diferencaMsCorrigida % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((diferencaMsCorrigida % (1000 * 60)) / 1000);
+
+            document.getElementById("contador").innerText =
+                `${anos} anos, ${meses} meses, ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos`;
+        }
+
+        atualizarContador();
+        setInterval(atualizarContador, 1000);
+
+        function removerAcentosECaracteresEspeciais(texto) {
+            return texto.normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-zA-Z0-9 &]/g, "");
+        }
+
+        document.getElementById("nome-memoria").addEventListener("input", function () {
+            this.value = removerAcentosECaracteresEspeciais(this.value);
+        });
+
+        const inputField = document.getElementById('nome-memoria');
+        const submitButton = document.getElementById('nome-memoria-button');
+
+        inputField.addEventListener('input', function () {
+            const inputLength = inputField.value.trim().length;
+
+            if (inputLength >= 3) {
+                submitButton.disabled = false;
+                // errorMessage.style.display = 'none';  // Esconde a mensagem de erro
+            } else {
+                submitButton.disabled = true;
+                // errorMessage.style.display = 'block';  // Exibe a mensagem de erro
+            }
+        });
+
+        document.getElementById('nome-memoria').addEventListener('input', function () {
+            let barra_url = (document.getElementById('nome-memoria').value.replace(/ /g, '-')).replace(/&/g, 'e');
+            document.getElementById('barra-url-nome').textContent = barra_url || '';
+        });
+    </script>
+
+</body>
+
+</html>
