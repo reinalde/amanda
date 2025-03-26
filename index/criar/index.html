@@ -140,8 +140,8 @@
                 </div>
 
                 <div class="input-container">
-                    <input type="text" id="nome-memoria" placeholder='https://open.spotify.com/track/...'
-                        minlength="3" maxlength="80" autocomplete="off" required>
+                    <input type="text" id="url-spotify" placeholder='https://open.spotify.com/track/...' minlength="3"
+                        maxlength="80" autocomplete="off" required>
                 </div>
 
                 <div class="button-center">
@@ -169,7 +169,7 @@
                     <button id="emoji-button" class="criar-botao" data-etapa="etapa" data-etapa-atual="6"
                         data-proxima-etapa="7" disabled>Próxima etapa</button>
                 </div>
-                
+
                 <script type="text/javascript">
                     $(document).ready(function () {
                         $("#emoji1").emojioneArea({
@@ -221,10 +221,7 @@
 
                     <div class="html cascata" oncontextmenu="return false" style="user-select:none;">
 
-                        <div class="spotify hidden">
-                            <iframe src="https://open.spotify.com/embed/track/68cPbG7hJnwDW9nPX1uQcX" width="100%"
-                                frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-                        </div>
+                        <div class="spotify hidden"></div>
 
                         <div class="display hidden" id="slide_show">
                             <div class="card-container">
@@ -323,6 +320,12 @@
 
     <script src="../js/script.js"></script>
 
+
+    <script id="config" data-testid="config" type="application/json">{"appName":"web_player_prototype","market":"BR","locale":{"locale":"pt-BR","rtl":false,"textDirection":"ltr"},"userCountry":"BR","isPremium":false,"correlationId":"9acba568e4b58f765609ad5276b57418","isAnonymous":false,"gtmId":"GTM-PZHN3VD","optimizeId":"GTM-W53X654","pipResources":{"scripts":["https://open.spotifycdn.com/cdn/build/web-player/vendor~web-player.a822bed9.js","https://open.spotifycdn.com/cdn/build/web-player/pip-mini-player.841dbfa2.js"],"styles":["https://open.spotifycdn.com/cdn/build/web-player/pip-mini-player.2ed865c9.css"]},"retargetingPixels":null,"recaptchaWebPlayerFraudSiteKey":"6LfCVLAUAAAAALFwwRnnCJ12DalriUGbj8FW_J39","serverTime":1742918883}</script>
+    <script src="https://open.spotifycdn.com/cdn/build/web-player/web-player.3f9ec784.js"></script>
+
+
+    
 </body>
 
 </html>

@@ -298,10 +298,10 @@ const observer = new MutationObserver(mutations => {
 
                 intervaloEmoji = setInterval(createEmoji, 500);
             } else {
-                
+
             }
 
-            if (Emoji1Valid){
+            if (Emoji1Valid) {
                 emojiLoveBat.innerText = emojiInput_1.innerText;
             }
 
@@ -315,6 +315,37 @@ observer.observe(emojiInput_2, config);
 observer.observe(emojiInput_3, config);
 //*********************************************************//
 //*********************************************************//
+
+
+
+
+
+//*********************************************************//
+//  ETAPA: Spotify
+//*********************************************************//
+const spotifyInput = document.getElementById('url-spotify');
+
+function validarSpotify() {
+
+    const id_musica = spotifyInput.value.match(/track\/([a-zA-Z0-9]+)/);
+
+    if (id_musica ? id_musica[1] : null) {
+        document.getElementsByClassName('spotify')[0].innerHTML = `<iframe src="https://open.spotify.com/embed/track/${id_musica[1]}" width="100%" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>`;
+
+        document.getElementsByClassName("spotify")[0].classList.remove("hidden");
+    } else {
+        document.getElementsByClassName('spotify')[0].innerHTML = '';
+        document.getElementsByClassName("spotify")[0].classList.add("hidden");
+    }
+}
+
+spotifyInput.addEventListener('input', function () { validarSpotify() });
+
+//*********************************************************//
+//*********************************************************//
+
+
+
 
 
 //*********************************************************//
