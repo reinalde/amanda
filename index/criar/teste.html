@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="music-list">
+        <label class="music-item">
+            <input type="radio" name="music-select" class="music-radio">
+            <img src="capa.jpg" alt="Capa do Álbum" class="music-cover">
+            <div class="music-info">
+                <div class="music-title">FANTASMA <span class="version">(versão GORDÃO DO PC)</span></div>
+                <div class="music-artists">GORDÃO DO PC, Mc Menor DN, Mc Leozin, Ana Laura Lopes</div>
+            </div>
+            <button class="add-button">+</button>
+        </label>
+    
+        <label class="music-item">
+            <input type="radio" name="music-select" class="music-radio">
+            <img src="capa.jpg" alt="Capa do Álbum" class="music-cover">
+            <div class="music-info">
+                <div class="music-title">FANTASMA <span class="version">(versão GORDÃO DO PC)</span></div>
+                <div class="music-artists">GORDÃO DO PC, Mc Menor DN, Mc Leozin, Ana Laura Lopes</div>
+            </div>
+            <button class="add-button">+</button>
+        </label>
+    </div>
+    
+    
+    
+
+    <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.music-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Estilização do item */
+.music-item {
+    display: flex;
+    align-items: center;
+    background-color: #111;
+    padding: 10px;
+    border-radius: 8px;
+    width: 400px;
+    color: white;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border 0.3s ease;
+}
+
+/* Quando o input radio dentro do label estiver selecionado, muda a borda */
+.music-radio:checked + .music-cover + .music-info + .add-button {
+    outline: 2px solid red;
+}
+
+/* Estiliza a capa */
+.music-cover {
+    width: 50px;
+    height: 50px;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+/* Informações da música */
+.music-info {
+    flex-grow: 1;
+}
+
+.music-title {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.version {
+    color: #999;
+    font-size: 12px;
+}
+
+.music-artists {
+    font-size: 12px;
+    color: #777;
+    margin-top: 2px;
+}
+
+.add-button {
+    background: none;
+    border: 1px solid white;
+    color: white;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Esconde o input de rádio */
+.music-radio {
+    position: absolute;
+    opacity: 0;
+}
+
+
+
+    </style>
+</body>
+
+</html>

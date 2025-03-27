@@ -1,0 +1,7 @@
+
+SÓ FUNCIONA COM ESSE OUTRO JS
+<script src="https://open.spotifycdn.com/cdn/build/web-player/vendor~web-player.a822bed9.js"></script>
+
+GET ACESS TOKEN
+https://open.spotifycdn.com/cdn/build/web-player/web-player.3f9ec784.js
+

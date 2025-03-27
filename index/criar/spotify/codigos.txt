@@ -1,0 +1,156 @@
+// get spotify access token
+    async function getAccessToken() {
+        try {
+            const response = await fetch('https://accounts.spotify.com/api/token', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `grant_type=client_credentials&client_id=63b3e56655b342c893de89a2cd4b5a66&client_secret=8bfbcecd4ff84046b0554f26f45ea74e`
+            });
+            
+            if (!response.ok) {
+                throw new Error('Failed to get access token');
+            }
+            
+            const data = await response.json();
+            return data.access_token;
+        } catch (error) {
+            console.error('Token error:', error);
+            throw new Error('Authentication failed');
+        }
+    }
+
+getAccessToken()
+
+
+
+async function getSpotifyInfo(token) {
+        const endpoint = `https://api.spotify.com/v1/tracks/68cPbG7hJnwDW9nPX1uQcX`;
+        const response = await fetch(endpoint, {
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'accept': 'application/json',
+                'accept-language': 'pt-BR',
+                'app-platform': 'WebPlayer',
+                'referer': 'https://open.spotify.com/',
+                'spotify-app-version': '1.2.61.67.g49a77b02'
+            }
+        });
+        
+        if (!response.ok) {
+            throw new Error(`Failed to fetch ${type} info`);
+        }
+        
+        return await response.json();
+    }
+
+getSpotifyInfo('BQD5udg25R2eQw7AI2oUljN_PEb8526V4jLZSZxE_wysvdyqrZ7m5PTUgRj9i852dXKSBkziBJzwcyxGJTV7RUFC8hGUpA13kMinhjRxLin_hvydT4nG8qLbh97yEjIa2CZHsRwgTKByrEO9EGz4Y3-VntGqL8razdNcIO6MviO9UbL6pUhQxfnb3t_vk8tI1p7jzvbe9RRg1zCPRU-F0c8WTKSnfoVpd6xH5zB5Unc4J1FDI1UjeEnXdGdEhZiMdjj1kvlqwDJ5rgKXLpe-q2AkJuIlGwQ9P67upQfsTRhQNugZKBXljAa5dk6drxywx952a3IrJo71NJnDwEEW1YHYZ1fixZpp');
+
+
+
+
+
+
+
+async function getSpotifyInfo(token) {
+        const endpoint = `https://api-partner.spotify.com/pathfinder/v1/query?operationName=searchTracks&variables=%7B%22includePreReleases%22%3Afalse%2C%22numberOfTopResults%22%3A20%2C%22searchTerm%22%3A%22m%C3%A3e%22%2C%22offset%22%3A0%2C%22limit%22%3A20%2C%22includeAudiobooks%22%3Atrue%2C%22includeAuthors%22%3Afalse%7D&extensions=%7B%22persistedQuery%22%3A%7B%22version%22%3A1%2C%22sha256Hash%22%3A%22bc1ca2fcd0ba1013a0fc88e6cc4f190af501851e3dafd3e1ef85840297694428%22%7D%7D`;
+        const response = await fetch(endpoint, {
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'accept': 'application/json',
+                'accept-language': 'pt-BR',
+                'app-platform': 'WebPlayer',
+                'referer': 'https://open.spotify.com/',
+                'spotify-app-version': '1.2.61.67.g49a77b02'
+            }
+        });
+        
+        if (!response.ok) {
+            throw new Error(`Failed to fetch ${type} info`);
+        }
+        return await response.json();
+    }
+
+getSpotifyInfo('BQAbOvFeTAdDoKoA_eolEmHLp-C4u5faCAmwtTwr-pwQfqZ3xVvVRoKl9AHKn56QV2g3hCntcPHBClJSre_nCyVmXTxBXXYNLHaI4Y6epBRqFuD7mlqp_DLBqd75CGu4ZqH9L-CZsQNplcaUeN6lVftSBiBa96rSogvCccfDMskxZJFoLEvbvW442YaVRBJibeB1AzZEyNLYcjCpVipGxbZHHHsDbUEUdgFf9CroNGAL_q2j9FjUlH-79xQ8Yk8Ry_oA8Zvaspo9EIcocSCRCwYBxlUQPXcXi7KuViEguXTRbuX8LdiT91c8g9f0a3jyXFNeZZxwkl0Ukiko7icjx6K8hFVifQKW');
+
+
+
+
+
+
+async function seguirPerfilSpotify(token) {
+        const endpoint = 'https://api-partner.spotify.com/pathfinder/v1/query';
+        const response = await fetch(endpoint, {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'accept':'application/json',
+                'accept-language':'pt-BR',
+                'app-platform':'WebPlayer',
+                'content-type':'application/json;charset=UTF-8',
+                'dnt':'1',
+                'origin':'https://open.spotify.com',
+                'referer':'https://open.spotify.com/',
+                'sec-ch-ua':'"Chromium";v="134", "Not:A-Brand";v="24", "Google Chrome";v="134"',
+                'sec-ch-ua-mobile':'?0',
+                'sec-ch-ua-platform':'"Windows"',
+                'sec-fetch-dest':'empty',
+                'sec-fetch-mode':'cors',
+                'sec-fetch-site':'same-site',
+                'spotify-app-version': '1.2.61.86.gaa9e8ad3',
+                'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'
+            },
+            body: JSON.stringify({
+                "variables":{"uris":["spotify:artist:7gIeuq2qBfYhO1budb6TSQ"]},"operationName":"addToLibrary","extensions":{"persistedQuery":{"version":1,"sha256Hash":"a3c1ff58e6a36fec5fe1e3a193dc95d9071d96b9ba53c5ba9c1494fb1ee73915"}}
+            })
+        });
+        
+        if (!response.ok) {
+            throw new Error(`Failed to fetch ${type} info`);
+        }
+        
+        return await response.json();
+    }
+
+seguirPerfilSpotify('BQBmSlSlnGnO0gOaUMH53FFHyh9HpSPjBCxIo48WTve6s6c8FfJ1lJXrBdA0l3IDsPs4W9vg80JgSCFWHFqkzjjQyyQY28GiM4MuBW6Lbg3SWGXpjYd6TmBHP2SiR1PAJEXi-__re1YclXGi9j9BoayrR66ARwO6wwgTrgbFJdZa_7p41k7H5UY6dcjsSG7_p8bNCs0plFwjBorHVD4gZoiKJCPkxfCEGAkB1ygp4sbrx18lechfkJsfVcilbPwlHywSkFeUo8jzzdMaco9QNeWj-CY5NsmioWOzzXbKEvgDVnObzE7DRF68UzLU6hdFdMqubnIXhFUv80oMn4vgWAn7QbsCrPcc');
+
+
+
+
+
+
+
+
+async function get_access_token(token) {
+        const endpoint = token;
+        const response = await fetch(endpoint, {
+            method: 'GET',
+            headers: {
+                // 'Authorization': `Bearer ${token}`,
+                'accept':'application/json',
+                'accept-language':'pt-BR',
+                'app-platform':'WebPlayer',
+                'content-type':'application/json;charset=UTF-8',
+                'dnt':'1',
+                'origin':'https://open.spotify.com',
+                'referer':'https://open.spotify.com/',
+                'sec-ch-ua':'"Chromium";v="134", "Not:A-Brand";v="24", "Google Chrome";v="134"',
+                'sec-ch-ua-mobile':'?0',
+                'sec-ch-ua-platform':'"Windows"',
+                'sec-fetch-dest':'empty',
+                'sec-fetch-mode':'cors',
+                'sec-fetch-site':'same-site',
+                'spotify-app-version': '1.2.61.86.gaa9e8ad3',
+                'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'
+            }
+        });
+        
+        if (!response.ok) {
+            throw new Error(`Failed to fetch ${type} info`);
+        }
+        
+        return await response.json();
+    }
+
+get_access_token('https://open.spotify.com/embed/api/token');

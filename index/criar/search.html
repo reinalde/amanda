@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="search-container">
+        <input type="text" id="search" placeholder="Pesquise..." autocomplete="off">
+        <div id="suggestions" class="suggestions"></div>
+    </div>
+
+    <script>
+
+        const suggestionsDiv = document.getElementById('suggestions');
+        suggestionsDiv.innerHTML = '';
+
+        var token = 'BQCp6bgY8tgN9PeXCL4UuQ1AmB-Yk4wu_AYEQ1NWtVLhbdwCOuLtxOr3K9_QAoEkqSOaL-QyXh2Vz1XhWqNcT1BB9Go6XhTcS3Vl-8iCcIwdHkrLGvnOEzBB3hg8KAYniEP4DNY2vovTN3rQYCp1TWaoDqaX_FHrC4-k95gBh0JlXvvOjgsguv7zB7rA4vpff17SErwUy4C3CCmlasRJTAh-0RmGjuaOwauiy0QrLBP9gifkBsQ';
+
+        async function getPesquisa(token, query) {
+            // const endpoint = `https://api-partner.spotify.com/pathfinder/v1/query?operationName=searchTracks&variables=%7B%22includePreReleases%22%3Afalse%2C%22numberOfTopResults%22%3A20%2C%22searchTerm%22%3A%22${encodeURIComponent(query)}%22%2C%22offset%22%3A0%2C%22limit%22%3A20%2C%22includeAudiobooks%22%3Atrue%2C%22includeAuthors%22%3Afalse%7D&extensions=%7B%22persistedQuery%22%3A%7B%22version%22%3A1%2C%22sha256Hash%22%3A%22bc1ca2fcd0ba1013a0fc88e6cc4f190af501851e3dafd3e1ef85840297694428%22%7D%7D`;
+            // const response = await fetch(endpoint, {
+            //     headers: {
+            //         'Authorization': `Bearer ${token}`,
+            //         'accept': 'application/json',
+            //         'accept-language': 'pt-BR',
+            //         'app-platform': 'WebPlayer',
+            //         'referer': 'https://open.spotify.com/',
+            //         'spotify-app-version': '1.2.61.67.g49a77b02'
+            //     }
+            // });
+
+
+            await fetch(`https://api-partner.spotify.com/pathfinder/v1/query?operationName=searchTracks&variables=%7B%22includePreReleases%22%3Afalse%2C%22numberOfTopResults%22%3A20%2C%22searchTerm%22%3A%22${encodeURIComponent(query)}%22%2C%22offset%22%3A0%2C%22limit%22%3A20%2C%22includeAudiobooks%22%3Atrue%2C%22includeAuthors%22%3Afalse%7D&extensions=%7B%22persistedQuery%22%3A%7B%22version%22%3A1%2C%22sha256Hash%22%3A%22bc1ca2fcd0ba1013a0fc88e6cc4f190af501851e3dafd3e1ef85840297694428%22%7D%7D`, {
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'accept': 'application/json',
+                    'accept-language': 'pt-BR',
+                    'app-platform': 'WebPlayer',
+                }
+            })
+                .then(response => response.json())
+                .then(json => {
+                    console.log(json.data.searchV2.tracksV2.items);
+
+                    json.data.searchV2.tracksV2.items.forEach(item => {
+                        console.log(item.item.data.name);
+                    })
+
+                    if (json.length > 0) {
+                        console.log(json);
+                        // data.forEach(item => {
+                        //     const div = document.createElement('div');
+                        //     div.textContent = item.name;  // Supondo que o item tenha uma propriedade 'name'
+                        //     div.addEventListener('click', function () {
+                        //         document.getElementById('search').value = item.name;
+                        //         suggestionsDiv.innerHTML = '';  // Limpa as sugestões após seleção
+                        //     });
+                        //     suggestionsDiv.appendChild(div);
+                        // });
+                    } else {
+                        const noResults = document.createElement('div');
+                        noResults.textContent = 'Nenhum resultado';
+                        suggestionsDiv.appendChild(noResults);
+                    }
+                })
+                .catch(error => {
+                    if (error.name !== 'AbortError') {
+                        console.error('Erro na busca:', error);
+                    }
+                });
+
+        }
+
+        let lastFetchAbortController = null; // Variável para armazenar o último AbortController
+        let debounceTimeout = null; // Variável para armazenar o timeout de debounce
+
+        document.getElementById('search').addEventListener('input', function () {
+            const query = this.value;
+            const suggestionsDiv = document.getElementById('suggestions');
+            suggestionsDiv.innerHTML = '';  // Limpa as sugestões anteriores
+
+            if (query.length > 2) {
+
+                clearTimeout(debounceTimeout);
+                debounceTimeout = setTimeout(() => {
+
+                    getPesquisa(token, query);
+
+                    // fetch(`https://api-partner.spotify.com/pathfinder/v1/query?operationName=searchTracks&variables=%7B%22includePreReleases%22%3Afalse%2C%22numberOfTopResults%22%3A20%2C%22searchTerm%22%3A%22${encodeURIComponent(query)}%22%2C%22offset%22%3A0%2C%22limit%22%3A20%2C%22includeAudiobooks%22%3Atrue%2C%22includeAuthors%22%3Afalse%7D&extensions=%7B%22persistedQuery%22%3A%7B%22version%22%3A1%2C%22sha256Hash%22%3A%22bc1ca2fcd0ba1013a0fc88e6cc4f190af501851e3dafd3e1ef85840297694428%22%7D%7D`, {
+                    // })
+                    //     .then(response => response.json())
+                    //     .then(data => {
+                    //         if (data.length > 0) {
+                    //             // Exibe as sugestões dentro da caixa
+                    //             data.forEach(item => {
+                    //                 const div = document.createElement('div');
+                    //                 div.textContent = item.name;  // Supondo que o item tenha uma propriedade 'name'
+                    //                 div.addEventListener('click', function () {
+                    //                     document.getElementById('search').value = item.name;
+                    //                     suggestionsDiv.innerHTML = '';  // Limpa as sugestões após seleção
+                    //                 });
+                    //                 suggestionsDiv.appendChild(div);
+                    //             });
+                    //         } else {
+                    //             const noResults = document.createElement('div');
+                    //             noResults.textContent = 'Nenhum resultado';
+                    //             suggestionsDiv.appendChild(noResults);
+                    //         }
+                    //     })
+                    //     .catch(error => {
+                    //         if (error.name !== 'AbortError') {
+                    //             console.error('Erro na busca:', error);
+                    //         }
+                    //     });
+                }, 300);  // Espera 300ms após o usuário parar de digitar
+            }
+        });
+
+
+    </script>
+    <style>
+        .search-container {
+            position: relative;
+            width: 300px;
+        }
+
+        #search {
+            width: 100%;
+            padding: 8px;
+        }
+
+        .suggestions {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-top: none;
+            max-height: 150px;
+            overflow-y: auto;
+            z-index: 100;
+        }
+
+        .suggestions div {
+            padding: 8px;
+            cursor: pointer;
+        }
+
+        .suggestions div:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</body>
+
+</html>

@@ -587,16 +587,119 @@ button:not([disabled]).criar-botao {
     left: -43px;
     top: 30px;
 }
+
 .emojionearea-picker-position-segundo-center {
     margin-top: 10px;
     left: -120px;
     top: 30px;
 }
+
 .emojionearea-picker-position-terceiro-center {
     margin-top: 10px;
     left: -200px;
     top: 30px;
 }
+
+
+
+
+
+.spotify-sugestao {
+    display: grid;
+    position: relative;
+    margin-left: -16px;
+    margin-right: -16px;
+    text-align: center;
+    justify-content: center;
+
+
+    .spotify-card {
+        margin-right: 5px;
+        margin-left: 5px;
+        margin-bottom: 10px;
+        text-align: left;
+        user-select: none;
+    }
+
+    .spotify-item {
+        display: flex;
+        width: 240px;
+        height: 90px;
+
+        overflow: hidden;
+        align-items: center;
+        /* background-color: #111; */
+        padding: 5px;
+        border-radius: 10px;
+        border: 1px dashed #1ed760;
+        color: white;
+        transition: border 0.1s ease;
+        position: relative;
+    }
+
+    .spotify-item:focus-within {
+        border-color: #ff4e6d;
+        /* Quando recebe foco, a borda fica vermelha */
+    }
+
+    .spotify-cover {
+        width: 70px;
+        height: 70px;
+        border-radius: 10px;
+        margin-right: 5px;
+    }
+
+    .spotify-info {
+        flex-grow: 1;
+    }
+
+    .spotify-title {
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .spotify-version {
+        color: #999;
+        font-size: 12px;
+    }
+
+    .spotify-artists {
+        font-size: 10px;
+        color: #919191;
+        margin-top: 2px;
+    }
+
+    .spotify-add-button {
+        /* background: none;
+        border: 1px solid white;
+        color: white;
+        font-size: 20px;
+        width: 30px;
+        height: 25px;
+        border-radius: 50%;
+        cursor: pointer; */
+
+        background: none;
+        border: 0px solid white;
+        /* color: white; */
+        /* font-size: 20px; */
+        /* width: 20px; */
+        /* height: 20px; */
+        /* border-radius: 50%; */
+        cursor: pointer;
+    }
+
+    .spotify-icone{
+        fill: #d3d3d3;
+    }
+
+    .spotify-icone:hover{
+        background-color: transparent;
+        fill: #ff4e6d;
+    }
+}
+
+
 
 @media (max-width: 1024px) {
     .criar-container {
