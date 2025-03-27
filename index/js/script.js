@@ -36,67 +36,71 @@ function updateFotosCount() {
 fileInput.addEventListener('change', (event) => {
     const newFiles = Array.from(event.target.files);
 
-    if (filesArray.length + newFiles.length > MAX_FILES) {
-        // alert(`Você pode enviar no máximo ${MAX_FILES} imagens!`);
-        return;
-    }
+    // if (filesArray.length + newFiles.length > MAX_FILES) {
+    //     alert(`Você pode enviar no máximo ${MAX_FILES} imagens!`);
+    //     return;
+    // }
 
     newFiles.forEach((file) => {
-        filesArray.push(file);
 
-        const reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onload = (e) => {
-            const imageURL = e.target.result;
+        if (filesArray.length < MAX_FILES) {
 
-            const div_principal = document.createElement('div');
-            div_principal.classList.add('card-fotos');
+            filesArray.push(file);
 
-            const div_dois = document.createElement('div');
-            div_dois.classList.add('image-upload');
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = (e) => {
+                const imageURL = e.target.result;
 
-            const img = document.createElement('img');
-            img.src = imageURL;
+                const div_principal = document.createElement('div');
+                div_principal.classList.add('card-fotos');
 
-            const label = document.createElement('label');
+                const div_dois = document.createElement('div');
+                div_dois.classList.add('image-upload');
 
-            const label_div = document.createElement('div');
-            label_div.classList.add('upload-icon');
-            label_div.textContent = "+";
+                const img = document.createElement('img');
+                img.src = imageURL;
 
-            const removeBtn = document.createElement('button');
-            removeBtn.textContent = 'X';
-            removeBtn.classList.add('remove-btn');
+                const label = document.createElement('label');
 
-            removeBtn.addEventListener('click', () => {
-                filesArray = filesArray.filter(f => f !== file);
-                div_principal.remove();
-                div_smartphone_preview.remove();
-                updateFileInput();
-                updateFotosCount();
-                updateButtonState();
-            });
+                const label_div = document.createElement('div');
+                label_div.classList.add('upload-icon');
+                label_div.textContent = "+";
 
-            var div = div_principal.appendChild(div_dois);
+                const removeBtn = document.createElement('button');
+                removeBtn.textContent = 'X';
+                removeBtn.classList.add('remove-btn');
 
-            div.appendChild(removeBtn);
-            div.appendChild(label).appendChild(label_div);
-            div.appendChild(img);
+                removeBtn.addEventListener('click', () => {
+                    filesArray = filesArray.filter(f => f !== file);
+                    div_principal.remove();
+                    div_smartphone_preview.remove();
+                    updateFileInput();
+                    updateFotosCount();
+                    updateButtonState();
+                });
 
-            previewContainer.appendChild(div_principal);
+                var div = div_principal.appendChild(div_dois);
+
+                div.appendChild(removeBtn);
+                div.appendChild(label).appendChild(label_div);
+                div.appendChild(img);
+
+                previewContainer.appendChild(div_principal);
 
 
-            const div_smartphone_preview = document.createElement('div');
-            div_smartphone_preview.classList.add('card');
+                const div_smartphone_preview = document.createElement('div');
+                div_smartphone_preview.classList.add('card');
 
-            const div_smartphone_img = document.createElement('img');
-            div_smartphone_img.classList.add('card__image');
-            div_smartphone_img.src = imageURL;
+                const div_smartphone_img = document.createElement('img');
+                div_smartphone_img.classList.add('card__image');
+                div_smartphone_img.src = imageURL;
 
-            div_smartphone_preview.appendChild(div_smartphone_img);
-            smartphonePreview.appendChild(div_smartphone_preview);
+                div_smartphone_preview.appendChild(div_smartphone_img);
+                smartphonePreview.appendChild(div_smartphone_preview);
 
-        };
+            };
+        }
     });
 
     updateFileInput();
