@@ -18,7 +18,7 @@
 
 <body>
 
-    <div class="header lg">
+    <div class="header-criar lg">
         <div class="header-alinhar">
             <div class="logo">
                 <img src="../logo/logo.png">
@@ -80,6 +80,10 @@
                 <div class="button-center">
                     <button id="fotos-memoria-button" class="criar-botao" data-etapa="etapa" data-etapa-atual="2"
                         data-proxima-etapa="3" disabled>Próxima etapa</button>
+
+                    <div class="button-voltar" data-etapa="voltar" data-etapa-atual="2" data-voltar-etapa="1">
+                        Voltar etapa
+                    </div>
                 </div>
             </div>
 
@@ -106,6 +110,10 @@
                 <div class="button-center">
                     <button id="data-memoria-button" class="criar-botao" data-etapa="etapa" data-etapa-atual="3"
                         data-proxima-etapa="4" disabled>Próxima etapa</button>
+
+                    <div class="button-voltar" data-etapa="voltar" data-etapa-atual="3" data-voltar-etapa="2">
+                        Voltar etapa
+                    </div>
                 </div>
             </div>
 
@@ -127,6 +135,10 @@
                 <div class="button-center">
                     <button id="mensagem-memoria-button" class="criar-botao" data-etapa="etapa" data-etapa-atual="4"
                         data-proxima-etapa="5" disabled>Próxima etapa</button>
+
+                    <div class="button-voltar" data-etapa="voltar" data-etapa-atual="4" data-voltar-etapa="3">
+                        Voltar etapa
+                    </div>
                 </div>
             </div>
 
@@ -143,6 +155,23 @@
                     <div class="spotify-sugestao">
                         <div class="spotify-card">
                             <div class="spotify-item">
+                                <div class="skeleton skeleton-image"></div>
+                                <div class="spotify-info">
+                                    <div class="spotify-title skeleton skeleton-text"></div>
+                                    <div class="spotify-artists skeleton skeleton-text short"></div>
+                                </div>
+
+                                <button class="spotify-add-button">
+                                    <svg data-encore-id="icon" class="spotify-icone" role="img" aria-hidden="true"
+                                        class="e-9640-icon" viewBox="0 0 16 16" style="width: 20px;" fill="#b3b3b3">
+                                        <path
+                                            d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z">
+                                        </path>
+                                        <path
+                                            d="M11.75 8a.75.75 0 0 1-.75.75H8.75V11a.75.75 0 0 1-1.5 0V8.75H5a.75.75 0 0 1 0-1.5h2.25V5a.75.75 0 0 1 1.5 0v2.25H11a.75.75 0 0 1 .75.75z">
+                                        </path>
+                                    </svg>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -192,6 +221,10 @@
                 <div class="button-center">
                     <button id="nome-musica-button" class="criar-botao" data-etapa="etapa" data-etapa-atual="5"
                         data-proxima-etapa="6" disabled>Próxima etapa</button>
+
+                    <div class="button-voltar" data-etapa="voltar" data-etapa-atual="5" data-voltar-etapa="4">
+                        Voltar etapa
+                    </div>
                 </div>
             </div>
 
@@ -213,6 +246,10 @@
                 <div class="button-center">
                     <button id="emoji-button" class="criar-botao" data-etapa="etapa" data-etapa-atual="6"
                         data-proxima-etapa="7" disabled>Próxima etapa</button>
+
+                    <div class="button-voltar" data-etapa="voltar" data-etapa-atual="6" data-voltar-etapa="5">
+                        Voltar etapa
+                    </div>
                 </div>
 
                 <script type="text/javascript">
@@ -248,6 +285,270 @@
                     });
                 </script>
             </div>
+
+            <div class="div-planos etapa-7 hidden">
+                <div class="title-header">
+                    Planos
+                </div>
+
+                <div class="subtitle">
+                    Escolha o plano que melhor atende às necessidades da sua página.
+                </div>
+
+                <div class="preco-grid">
+                    <div class="scroll-container d-flex" style="user-select: none;">
+                        <div class="container-card-preco-maior planos plano-selecionado" data-plano="premium">
+
+                            <div class="icone">
+                                <div class="title-card-preco">
+                                    Mais Vantagens
+                                </div>
+                            </div>
+
+                            <div class="content-preco">
+                                <div class="title-card">Premium</div>
+                                <div class="preco">R$28 <span>/ uma vez</span></div>
+                            </div>
+
+                            <div class="divisao-tracinho"></div>
+
+                            <div class="plano-vantagens">
+
+                                <div class="descricao">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="31" height="32" fill="none">
+                                        <path fill="#ffffff" fill-rule="evenodd"
+                                            d="M18.33 12.644a1.26 1.26 0 0 1 1.783 0c.455.455.49 1.17.105 1.666l-.105.12-5.043 5.05a1.26 1.26 0 0 1-1.664.104l-.12-.105-2.52-2.525a1.264 1.264 0 0 1 0-1.785 1.26 1.26 0 0 1 1.664-.105l.118.105 1.63 1.631 4.152-4.156Z"
+                                            clip-rule="evenodd"></path>
+                                        <path fill="#ffffff" fill-rule="evenodd"
+                                            d="M15.44 3.436C8.475 3.436 2.83 9.089 2.83 16.06c0 6.974 5.645 12.626 12.608 12.626 6.963 0 12.608-5.652 12.608-12.626 0-6.972-5.645-12.625-12.608-12.625Zm0 2.525c5.57 0 10.086 4.522 10.086 10.1 0 5.579-4.516 10.101-10.087 10.101-5.57 0-10.086-4.522-10.086-10.1 0-5.579 4.516-10.101 10.086-10.101Z"
+                                            clip-rule="evenodd" opacity="0.5"></path>
+                                    </svg>
+
+                                    Pra sempre
+                                </div>
+
+                                <div class="descricao">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="31" height="32" fill="none">
+                                        <path fill="#ffffff" fill-rule="evenodd"
+                                            d="M18.33 12.644a1.26 1.26 0 0 1 1.783 0c.455.455.49 1.17.105 1.666l-.105.12-5.043 5.05a1.26 1.26 0 0 1-1.664.104l-.12-.105-2.52-2.525a1.264 1.264 0 0 1 0-1.785 1.26 1.26 0 0 1 1.664-.105l.118.105 1.63 1.631 4.152-4.156Z"
+                                            clip-rule="evenodd"></path>
+                                        <path fill="#ffffff" fill-rule="evenodd"
+                                            d="M15.44 3.436C8.475 3.436 2.83 9.089 2.83 16.06c0 6.974 5.645 12.626 12.608 12.626 6.963 0 12.608-5.652 12.608-12.626 0-6.972-5.645-12.625-12.608-12.625Zm0 2.525c5.57 0 10.086 4.522 10.086 10.1 0 5.579-4.516 10.101-10.087 10.101-5.57 0-10.086-4.522-10.086-10.1 0-5.579 4.516-10.101 10.086-10.101Z"
+                                            clip-rule="evenodd" opacity="0.5"></path>
+                                    </svg>
+
+                                    <b>8</b> fotos
+                                </div>
+
+                                <div class="descricao">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="31" height="32" fill="none">
+                                        <path fill="#ffffff" fill-rule="evenodd"
+                                            d="M18.33 12.644a1.26 1.26 0 0 1 1.783 0c.455.455.49 1.17.105 1.666l-.105.12-5.043 5.05a1.26 1.26 0 0 1-1.664.104l-.12-.105-2.52-2.525a1.264 1.264 0 0 1 0-1.785 1.26 1.26 0 0 1 1.664-.105l.118.105 1.63 1.631 4.152-4.156Z"
+                                            clip-rule="evenodd"></path>
+                                        <path fill="#ffffff" fill-rule="evenodd"
+                                            d="M15.44 3.436C8.475 3.436 2.83 9.089 2.83 16.06c0 6.974 5.645 12.626 12.608 12.626 6.963 0 12.608-5.652 12.608-12.626 0-6.972-5.645-12.625-12.608-12.625Zm0 2.525c5.57 0 10.086 4.522 10.086 10.1 0 5.579-4.516 10.101-10.087 10.101-5.57 0-10.086-4.522-10.086-10.1 0-5.579 4.516-10.101 10.086-10.101Z"
+                                            clip-rule="evenodd" opacity="0.5"></path>
+                                    </svg>
+
+                                    QR Code
+                                </div>
+
+                                <div class="descricao">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="31" height="32" fill="none">
+                                        <path fill="#ffffff" fill-rule="evenodd"
+                                            d="M18.33 12.644a1.26 1.26 0 0 1 1.783 0c.455.455.49 1.17.105 1.666l-.105.12-5.043 5.05a1.26 1.26 0 0 1-1.664.104l-.12-.105-2.52-2.525a1.264 1.264 0 0 1 0-1.785 1.26 1.26 0 0 1 1.664-.105l.118.105 1.63 1.631 4.152-4.156Z"
+                                            clip-rule="evenodd"></path>
+                                        <path fill="#ffffff" fill-rule="evenodd"
+                                            d="M15.44 3.436C8.475 3.436 2.83 9.089 2.83 16.06c0 6.974 5.645 12.626 12.608 12.626 6.963 0 12.608-5.652 12.608-12.626 0-6.972-5.645-12.625-12.608-12.625Zm0 2.525c5.57 0 10.086 4.522 10.086 10.1 0 5.579-4.516 10.101-10.087 10.101-5.57 0-10.086-4.522-10.086-10.1 0-5.579 4.516-10.101 10.086-10.101Z"
+                                            clip-rule="evenodd" opacity="0.5"></path>
+                                    </svg>
+
+                                    Link personalizado
+                                </div>
+
+                                <div class="descricao">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="31" height="32" fill="none">
+                                        <path fill="#ffffff" fill-rule="evenodd"
+                                            d="M18.33 12.644a1.26 1.26 0 0 1 1.783 0c.455.455.49 1.17.105 1.666l-.105.12-5.043 5.05a1.26 1.26 0 0 1-1.664.104l-.12-.105-2.52-2.525a1.264 1.264 0 0 1 0-1.785 1.26 1.26 0 0 1 1.664-.105l.118.105 1.63 1.631 4.152-4.156Z"
+                                            clip-rule="evenodd"></path>
+                                        <path fill="#ffffff" fill-rule="evenodd"
+                                            d="M15.44 3.436C8.475 3.436 2.83 9.089 2.83 16.06c0 6.974 5.645 12.626 12.608 12.626 6.963 0 12.608-5.652 12.608-12.626 0-6.972-5.645-12.625-12.608-12.625Zm0 2.525c5.57 0 10.086 4.522 10.086 10.1 0 5.579-4.516 10.101-10.087 10.101-5.57 0-10.086-4.522-10.086-10.1 0-5.579 4.516-10.101 10.086-10.101Z"
+                                            clip-rule="evenodd" opacity="0.5"></path>
+                                    </svg>
+
+                                    Chuva de emojis
+                                </div>
+
+                                <div class="descricao">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="31" height="32" fill="none">
+                                        <path fill="#ffffff" fill-rule="evenodd"
+                                            d="M18.33 12.644a1.26 1.26 0 0 1 1.783 0c.455.455.49 1.17.105 1.666l-.105.12-5.043 5.05a1.26 1.26 0 0 1-1.664.104l-.12-.105-2.52-2.525a1.264 1.264 0 0 1 0-1.785 1.26 1.26 0 0 1 1.664-.105l.118.105 1.63 1.631 4.152-4.156Z"
+                                            clip-rule="evenodd"></path>
+                                        <path fill="#ffffff" fill-rule="evenodd"
+                                            d="M15.44 3.436C8.475 3.436 2.83 9.089 2.83 16.06c0 6.974 5.645 12.626 12.608 12.626 6.963 0 12.608-5.652 12.608-12.626 0-6.972-5.645-12.625-12.608-12.625Zm0 2.525c5.57 0 10.086 4.522 10.086 10.1 0 5.579-4.516 10.101-10.087 10.101-5.57 0-10.086-4.522-10.086-10.1 0-5.579 4.516-10.101 10.086-10.101Z"
+                                            clip-rule="evenodd" opacity="0.5"></path>
+                                    </svg>
+
+                                    Termômetro de Emojis
+                                </div>
+
+                                <div class="descricao">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="31" height="32" fill="none">
+                                        <path fill="#ffffff" fill-rule="evenodd"
+                                            d="M18.33 12.644a1.26 1.26 0 0 1 1.783 0c.455.455.49 1.17.105 1.666l-.105.12-5.043 5.05a1.26 1.26 0 0 1-1.664.104l-.12-.105-2.52-2.525a1.264 1.264 0 0 1 0-1.785 1.26 1.26 0 0 1 1.664-.105l.118.105 1.63 1.631 4.152-4.156Z"
+                                            clip-rule="evenodd"></path>
+                                        <path fill="#ffffff" fill-rule="evenodd"
+                                            d="M15.44 3.436C8.475 3.436 2.83 9.089 2.83 16.06c0 6.974 5.645 12.626 12.608 12.626 6.963 0 12.608-5.652 12.608-12.626 0-6.972-5.645-12.625-12.608-12.625Zm0 2.525c5.57 0 10.086 4.522 10.086 10.1 0 5.579-4.516 10.101-10.087 10.101-5.57 0-10.086-4.522-10.086-10.1 0-5.579 4.516-10.101 10.086-10.101Z"
+                                            clip-rule="evenodd" opacity="0.5"></path>
+                                    </svg>
+
+                                    Com música
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container-card-preco-menor planos" data-plano="basic">
+
+                            <div class="icone">
+                            </div>
+
+                            <div class="content-preco">
+                                <div class="title-card">Básico</div>
+                                <div class="preco">R$19 <span>/ por ano</span></div>
+                            </div>
+
+                            <div class="divisao-tracinho"></div>
+
+                            <div class="plano-vantagens">
+
+                                <div class="descricao">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="31" height="32" fill="none">
+                                        <path fill="#ffffff" fill-rule="evenodd"
+                                            d="M18.33 12.644a1.26 1.26 0 0 1 1.783 0c.455.455.49 1.17.105 1.666l-.105.12-5.043 5.05a1.26 1.26 0 0 1-1.664.104l-.12-.105-2.52-2.525a1.264 1.264 0 0 1 0-1.785 1.26 1.26 0 0 1 1.664-.105l.118.105 1.63 1.631 4.152-4.156Z"
+                                            clip-rule="evenodd"></path>
+                                        <path fill="#ffffff" fill-rule="evenodd"
+                                            d="M15.44 3.436C8.475 3.436 2.83 9.089 2.83 16.06c0 6.974 5.645 12.626 12.608 12.626 6.963 0 12.608-5.652 12.608-12.626 0-6.972-5.645-12.625-12.608-12.625Zm0 2.525c5.57 0 10.086 4.522 10.086 10.1 0 5.579-4.516 10.101-10.087 10.101-5.57 0-10.086-4.522-10.086-10.1 0-5.579 4.516-10.101 10.086-10.101Z"
+                                            clip-rule="evenodd" opacity="0.5"></path>
+                                    </svg>
+
+                                    <b>1</b> ano de acesso
+                                </div>
+
+                                <div class="descricao">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="31" height="32" fill="none">
+                                        <path fill="#ffffff" fill-rule="evenodd"
+                                            d="M18.33 12.644a1.26 1.26 0 0 1 1.783 0c.455.455.49 1.17.105 1.666l-.105.12-5.043 5.05a1.26 1.26 0 0 1-1.664.104l-.12-.105-2.52-2.525a1.264 1.264 0 0 1 0-1.785 1.26 1.26 0 0 1 1.664-.105l.118.105 1.63 1.631 4.152-4.156Z"
+                                            clip-rule="evenodd"></path>
+                                        <path fill="#ffffff" fill-rule="evenodd"
+                                            d="M15.44 3.436C8.475 3.436 2.83 9.089 2.83 16.06c0 6.974 5.645 12.626 12.608 12.626 6.963 0 12.608-5.652 12.608-12.626 0-6.972-5.645-12.625-12.608-12.625Zm0 2.525c5.57 0 10.086 4.522 10.086 10.1 0 5.579-4.516 10.101-10.087 10.101-5.57 0-10.086-4.522-10.086-10.1 0-5.579 4.516-10.101 10.086-10.101Z"
+                                            clip-rule="evenodd" opacity="0.5"></path>
+                                    </svg>
+
+                                    <b>3</b> fotos
+                                </div>
+
+                                <div class="descricao">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="31" height="32" fill="none">
+                                        <path fill="#ffffff" fill-rule="evenodd"
+                                            d="M18.33 12.644a1.26 1.26 0 0 1 1.783 0c.455.455.49 1.17.105 1.666l-.105.12-5.043 5.05a1.26 1.26 0 0 1-1.664.104l-.12-.105-2.52-2.525a1.264 1.264 0 0 1 0-1.785 1.26 1.26 0 0 1 1.664-.105l.118.105 1.63 1.631 4.152-4.156Z"
+                                            clip-rule="evenodd"></path>
+                                        <path fill="#ffffff" fill-rule="evenodd"
+                                            d="M15.44 3.436C8.475 3.436 2.83 9.089 2.83 16.06c0 6.974 5.645 12.626 12.608 12.626 6.963 0 12.608-5.652 12.608-12.626 0-6.972-5.645-12.625-12.608-12.625Zm0 2.525c5.57 0 10.086 4.522 10.086 10.1 0 5.579-4.516 10.101-10.087 10.101-5.57 0-10.086-4.522-10.086-10.1 0-5.579 4.516-10.101 10.086-10.101Z"
+                                            clip-rule="evenodd" opacity="0.5"></path>
+                                    </svg>
+
+                                    QR Code
+                                </div>
+
+                                <div class="descricao">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="31" height="32" fill="none">
+                                        <path fill="#ffffff" fill-rule="evenodd"
+                                            d="M18.33 12.644a1.26 1.26 0 0 1 1.783 0c.455.455.49 1.17.105 1.666l-.105.12-5.043 5.05a1.26 1.26 0 0 1-1.664.104l-.12-.105-2.52-2.525a1.264 1.264 0 0 1 0-1.785 1.26 1.26 0 0 1 1.664-.105l.118.105 1.63 1.631 4.152-4.156Z"
+                                            clip-rule="evenodd"></path>
+                                        <path fill="#ffffff" fill-rule="evenodd"
+                                            d="M15.44 3.436C8.475 3.436 2.83 9.089 2.83 16.06c0 6.974 5.645 12.626 12.608 12.626 6.963 0 12.608-5.652 12.608-12.626 0-6.972-5.645-12.625-12.608-12.625Zm0 2.525c5.57 0 10.086 4.522 10.086 10.1 0 5.579-4.516 10.101-10.087 10.101-5.57 0-10.086-4.522-10.086-10.1 0-5.579 4.516-10.101 10.086-10.101Z"
+                                            clip-rule="evenodd" opacity="0.5"></path>
+                                    </svg>
+
+                                    Link personalizado
+                                </div>
+
+                                <div class="descricao">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="31" height="32" fill="none">
+                                        <path fill="#ffffff" fill-rule="evenodd"
+                                            d="M18.33 12.644a1.26 1.26 0 0 1 1.783 0c.455.455.49 1.17.105 1.666l-.105.12-5.043 5.05a1.26 1.26 0 0 1-1.664.104l-.12-.105-2.52-2.525a1.264 1.264 0 0 1 0-1.785 1.26 1.26 0 0 1 1.664-.105l.118.105 1.63 1.631 4.152-4.156Z"
+                                            clip-rule="evenodd"></path>
+                                        <path fill="#ffffff" fill-rule="evenodd"
+                                            d="M15.44 3.436C8.475 3.436 2.83 9.089 2.83 16.06c0 6.974 5.645 12.626 12.608 12.626 6.963 0 12.608-5.652 12.608-12.626 0-6.972-5.645-12.625-12.608-12.625Zm0 2.525c5.57 0 10.086 4.522 10.086 10.1 0 5.579-4.516 10.101-10.087 10.101-5.57 0-10.086-4.522-10.086-10.1 0-5.579 4.516-10.101 10.086-10.101Z"
+                                            clip-rule="evenodd" opacity="0.5"></path>
+                                    </svg>
+
+                                    Chuva de emojis
+                                </div>
+
+                                <div class="descricao">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" fill="none">
+                                        <path fill="red" fill-rule="evenodd"
+                                            d="M15.44 2.715C8.475 2.715 2.83 8.368 2.83 15.341S8.476 27.967 15.44 27.967c6.963 0 12.608-5.653 12.608-12.626S22.402 2.715 15.44 2.715Zm0 2.525c5.57 0 10.086 4.522 10.086 10.1 0 5.58-4.516 10.101-10.087 10.101-5.57 0-10.086-4.522-10.086-10.1 0-5.579 4.516-10.1 10.086-10.1Z"
+                                            clip-rule="evenodd" opacity="0.5"></path>
+                                        <path stroke="red" stroke-linecap="round" stroke-width="2.525"
+                                            d="m11.765 11.553 6.887 7.575M18.652 11.553l-6.887 7.575"></path>
+                                    </svg>
+
+                                    Termômetro de Emojis
+                                </div>
+
+                                <div class="descricao">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" fill="none">
+                                        <path fill="red" fill-rule="evenodd"
+                                            d="M15.44 2.715C8.475 2.715 2.83 8.368 2.83 15.341S8.476 27.967 15.44 27.967c6.963 0 12.608-5.653 12.608-12.626S22.402 2.715 15.44 2.715Zm0 2.525c5.57 0 10.086 4.522 10.086 10.1 0 5.58-4.516 10.101-10.087 10.101-5.57 0-10.086-4.522-10.086-10.1 0-5.579 4.516-10.1 10.086-10.1Z"
+                                            clip-rule="evenodd" opacity="0.5"></path>
+                                        <path stroke="red" stroke-linecap="round" stroke-width="2.525"
+                                            d="m11.765 11.553 6.887 7.575M18.652 11.553l-6.887 7.575"></path>
+                                    </svg>
+
+                                    Sem música
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="button-center">
+                    <button id="emoji-button" class="criar-botao" data-etapa="etapa" data-etapa-atual="7"
+                        data-proxima-etapa="8">Próxima etapa</button>
+
+                    <div class="button-voltar" data-etapa="voltar" data-etapa-atual="7" data-voltar-etapa="6">
+                        Voltar etapa
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="div-email-memoria etapa-8 hidden">
+                <div class="title-header">
+                    Seu e-mail
+                </div>
+
+                <div class="subtitle">
+                    Informe seu e-mail corretamente para receber o QR Code da sua memória.
+                </div>
+
+                <div class="input-container">
+                    <input type="email" id="email-memoria" placeholder='Seu melhor e-mail'
+                        minlength="3" maxlength="80" autocomplete="off" required>
+                </div>
+
+                <div class="button-center">
+                    <button id="email-button" class="criar-botao" data-etapa="enviar" disabled>Pagar com Pix ou Cartão</button>
+
+                    <div class="button-voltar" data-etapa="voltar" data-etapa-atual="8" data-voltar-etapa="7">
+                        Voltar etapa
+                    </div>
+
+                </div>
+            </div>
+
         </div>
 
         <div class="container">
@@ -318,19 +619,7 @@
 
 
 
-                            <div class="mensagem hidden" id="mensagem">
-                                A cada dia que passa, meu coração se enche mais de carinho e admiração por você.
-                                Cada
-                                sorriso seu ilumina o meu
-                                mundo,
-                                e cada abraço me faz sentir que estou exatamente onde deveria estar. Você é a razão
-                                dos
-                                meus
-                                melhores
-                                pensamentos e tudo ao seu lado se torna mais bonito. Eu te amo para sempre ❤️<br>
-                                <br>Feliz dia das mulheres 💃 ✨
-                                <br><br><br><br><br><br><br><br><br><br><br><br><br><br>ddsdds
-                            </div>
+                            <div class="mensagem hidden" id="mensagem"></div>
 
                             <br><br>
                         </div>

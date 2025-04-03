@@ -13,8 +13,6 @@
 
     <meta name="theme-color" content="#1a1a2e">
 
-    <meta name="google-adsense-account" content="ca-pub-8939170977362308">
-
     <style>
         body {
             /* font-family: "Roboto", serif; */
@@ -114,6 +112,7 @@
     <script>
         const emojis = ['❤️', '💖', '💘', '💝', '💕', '🌹', '✨'];
         const emoji_grande = '❤️';
+        const dataInicial = "2019-04-06 16:30";
     </script>
 
     <script src="js/cascata.js"></script>
@@ -121,38 +120,47 @@
 
     <script>
         function atualizarContador() {
-            const dataInicial = "2019-04-06 16:30";
             const inicio = new Date(dataInicial);
             const agora = new Date();
-            const diferencaMs = agora - inicio;
+            let diferencaMs = agora - inicio;
 
             if (diferencaMs <= 0) {
-                document.getElementById("contador").innerText = "A data inicial é no futuro!";
+                document.getElementById("contador").innerText = "A data inicial não pode estar no futuro!";
                 return;
             }
 
             let anos = agora.getFullYear() - inicio.getFullYear();
             let meses = agora.getMonth() - inicio.getMonth();
             let dias = agora.getDate() - inicio.getDate();
+            let horas = agora.getHours() - inicio.getHours();
+            let minutos = agora.getMinutes() - inicio.getMinutes();
+            let segundos = agora.getSeconds() - inicio.getSeconds();
 
-            if (meses < 0) {
-                anos--;
-                meses += 12;
+            if (segundos < 0) {
+                segundos += 60;
+                minutos--;
             }
-
+            if (minutos < 0) {
+                minutos += 60;
+                horas--;
+            }
+            if (horas < 0) {
+                horas += 24;
+                dias--;
+            }
             if (dias < 0) {
+                let ultimoMes = new Date(agora.getFullYear(), agora.getMonth(), 0);
+                dias += ultimoMes.getDate();
                 meses--;
-                const ultimoDiaDoMes = new Date(inicio.getFullYear(), inicio.getMonth(), 0).getDate();
-                dias += ultimoDiaDoMes;
             }
-
-            const diferencaMsCorrigida = agora - new Date(inicio.getFullYear(), inicio.getMonth(), inicio.getDay(), inicio.getHours(), inicio.getMinutes());
-            const horas = Math.floor((diferencaMsCorrigida % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutos = Math.floor((diferencaMsCorrigida % (1000 * 60 * 60)) / (1000 * 60));
-            const segundos = Math.floor((diferencaMsCorrigida % (1000 * 60)) / 1000);
+            if (meses < 0) {
+                meses += 12;
+                anos--;
+            }
 
             document.getElementById("contador").innerText =
                 `${anos} anos, ${meses} meses, ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos`;
+
         }
 
         atualizarContador();
