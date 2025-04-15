@@ -1,44 +1,49 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Botão Personalizado</title>
     <style>
-        body {
+        .tela_cheia_center {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #1a1a2e;
             margin: 0;
         }
 
-        .botao {
-            background: linear-gradient(45deg, #ff6b6b, #ff9a9e);
-            border: none;
+        .botao_tela_cheia {
+            -webkit-tap-highlight-color: transparent;
+            background: linear-gradient(45deg, #1a1a2e, #1a1a2e);
+            border: solid #ff6b6b 2px;
             padding: 15px 30px;
             font-size: 18px;
             font-weight: bold;
             color: white;
             border-radius: 50px;
             cursor: pointer;
-            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+            box-shadow: 0px 1px 20px 5px rgba(255, 107, 107, 0.3);
             transition: all 0.3s ease;
             text-transform: uppercase;
         }
 
-        .botao:hover {
+        .botao_tela_cheia:hover {
             transform: scale(1.1);
             box-shadow: 0 8px 20px rgba(255, 107, 107, 0.5);
         }
 
-        .botao:active {
+        .botao_tela_cheia:active {
             transform: scale(0.95);
         }
     </style>
 </head>
+
 <body>
-    <button class="botao">Clique Aqui</button>
+    <div class="tela_cheia_center">
+        <button class="botao_tela_cheia">Clique</button>
+    </div>
 </body>
+
 </html>

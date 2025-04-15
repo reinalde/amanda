@@ -333,34 +333,6 @@ observer.observe(emojiInput_3, config);
 
 
 //*********************************************************//
-//  ETAPA: Spotify
-//*********************************************************//
-// const spotifyInput = document.getElementById('url-spotify');
-
-// function validarSpotify() {
-
-//     const id_musica = spotifyInput.value.match(/track\/([a-zA-Z0-9]+)/);
-
-//     if (id_musica ? id_musica[1] : null) {
-//         document.getElementsByClassName('spotify')[0].innerHTML = `<iframe src="https://open.spotify.com/embed/track/${id_musica[1]}" width="100%" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>`;
-
-//         document.getElementsByClassName("spotify")[0].classList.remove("hidden");
-//     } else {
-//         // document.getElementsByClassName('spotify')[0].innerHTML = '';
-//         // document.getElementsByClassName("spotify")[0].classList.add("hidden");
-//     }
-// }
-
-// spotifyInput.addEventListener('input', function () { validarSpotify() });
-
-//*********************************************************//
-//*********************************************************//
-
-
-
-
-
-//*********************************************************//
 //  ETAPA: Spotify - Pesquisar
 //*********************************************************//
 const spotifyPesquisa = document.getElementById('url-spotify');
@@ -406,17 +378,9 @@ async function getPesquisa(query) {
 
             document.getElementById("spotify-pesquisa-aguardando").classList.add("hidden");
 
-            console.log(json.data.searchV2.tracksV2.items);
-
-            json.data.searchV2.tracksV2.items.forEach(item => {
-                console.log(item.item.data.name);
-            })
-
             if (json.data.searchV2.tracksV2.items.length > 0) {
 
                 json.data.searchV2.tracksV2.items.forEach(item => {
-                    console.log(item.item.data.name);
-
                     var nomes_artistas = "";
                     var nomes_qnt = item.item.data.artists.items.length;
                     var cont = 0;
@@ -447,7 +411,6 @@ async function getPesquisa(query) {
                         </div>`;
 
                     div.addEventListener('click', function () {
-                        console.log(1)
                     });
 
                     spotifyPesquisaMostrar.appendChild(div);
@@ -543,8 +506,6 @@ let PlanoSelecionado = "premium";
 
 document.addEventListener("click", function (event) {
 
-    // if (event.target.tagName === "BUTTON") {
-
     let buttonId = event.target.id;
     let buttonEtapa = event.target.getAttribute("data-etapa");
     let buttonEtapaVoltar = event.target.getAttribute("data-voltar-etapa");
@@ -580,7 +541,7 @@ document.addEventListener("click", function (event) {
             break;
 
         case 'add-musica':
-            // liberar botão
+
             document.getElementById("nome-musica-button").disabled = false
 
             document.getElementsByClassName('spotify')[0].innerHTML = `<iframe src="https://open.spotify.com/embed/track/${buttonIDMusica}" width="100%" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>`;
@@ -596,15 +557,11 @@ document.addEventListener("click", function (event) {
         default:
 
             if (event.target.closest(".planos")) {
-                console.log(event.target.closest(".planos").dataset.plano);
-            }
-
-            if (event.target.closest(".planos")) {
-                let selecionado = event.target.closest(".planos"); // Encontra o elemento clicado
+                let selecionado = event.target.closest(".planos");
                 document.querySelectorAll(".planos").forEach(plan => plan.classList.remove("plano-selecionado"));
                 selecionado.classList.add("plano-selecionado");
 
-                PlanoSelecionado = selecionado.dataset.plano; // Atualiza o valor selecionado
+                PlanoSelecionado = selecionado.dataset.plano;
             }
             break;
     }
